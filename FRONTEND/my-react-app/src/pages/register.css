@@ -1,21 +1,25 @@
 #reg {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none; /* removed black bg */
+  background: none;
   padding: 40px 0;
+  height: 600px; /* Container height fixed */
+  overflow: hidden;
 }
 
-/* Card styling */
+/* === Card === */
 .card {
-  width: 70vw;
-  border: 3px solid #ff1a1a; /* red border */
+  height: 550px; /* Fixed height */
+  width: 90%;
+  max-width: 1000px;
+  border: 3px solid #ff1a1a;
   border-radius: 20px;
   overflow: hidden;
-  background: #fff; /* clean white background */
+  background: #fff;
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+  display: flex;
   transition: all 0.4s ease-in-out;
   animation: floatUp 1s ease-out;
 }
@@ -25,7 +29,26 @@
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.35);
 }
 
-/* Title styling */
+/* === Left side form === */
+.col-md-6.p-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+form .mb-3 {
+  margin-bottom: 8px !important;
+}
+
 h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -33,19 +56,21 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 1.2rem;
   animation: glowText 2s ease-in-out infinite alternate;
+  margin-top: -25px;
+  font-size: 1.5rem;
 }
 
-/* Inputs & selects */
+/* === Inputs & Labels === */
 .form-control,
 .form-select {
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1.5px solid #ff4d4d;
-  padding: 10px 12px;
   transition: all 0.3s ease;
   font-family: "Poppins", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin-top: -50px;
+  
 }
 
 .form-control:focus,
@@ -59,19 +84,21 @@ h3 {
   color: #d10000;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 50px;
+  
 }
 
-/* Button */
+/* === Button === */
 .btn-danger {
   background: linear-gradient(90deg, #ff1a1a, #b30000);
   border: none;
   border-radius: 10px;
-  padding: 12px;
-  font-size: 1.1rem;
+  padding: 10px;
+  font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
   color: #fff;
+  transition: all 0.3s ease;
+  margin-top: 5px;
 }
 
 .btn-danger:hover {
@@ -79,24 +106,27 @@ h3 {
   box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
 }
 
-/* Message alert */
+/* === Alert === */
 .alert {
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   animation: fadeIn 0.6s ease-in;
+  margin-top: 6px;
 }
 
-/* Carousel Section */
+/* === Carousel Right Side === */
 #img-card {
   position: relative;
+  height: 100%;
   animation: fadeSlide 1.2s ease-in;
+  overflow: hidden;
 }
 
 .carousel-inner img {
-  height: 550px; /* reduced height */
+  height: 500px; /* perfectly fits card height */
   width: 100%;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 0;
   transition: transform 1s ease;
 }
 
@@ -147,32 +177,19 @@ h3 {
   }
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 992px) {
+  #reg {
+    height: auto;
+    padding: 20px 0;
+  }
+
   .card {
-    width: 90%;
+    flex-direction: column;
+    height: auto;
   }
 
   .carousel-inner img {
-    height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  h3 {
-    font-size: 1.4rem;
-  }
-  .carousel-inner img {
-    height: 320px;
-  }
-}
-
-@media (max-width: 576px) {
-  .card {
-    width: 95%;
-    border: 2px solid #ff4d4d;
-  }
-  .carousel-inner img {
-    height: 250px;
+    height: 300px;
   }
 }
