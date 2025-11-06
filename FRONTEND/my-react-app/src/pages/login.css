@@ -1,0 +1,60 @@
+#login-bg {
+  background: linear-gradient(135deg, #ff1a1a, #b30000);
+  background-image: url("/images/bg-blood.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bgMove 10s ease-in-out infinite alternate;
+}
+#card {
+  border-radius: 20px;
+  margin-top: 100px;
+  width: 450px;
+  height: 350px;
+  border: 3px solid rgba(255, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+.log{
+    animation: none;
+}
+
+#card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+}
+.btn-danger {
+  background: linear-gradient(90deg, #ff1a1a, #b30000);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.3s ease;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+/* ===== Background Animation ===== */
+@keyframes bgMove {
+  0% {
+    background-position: center;
+  }
+  100% {
+    background-position: bottom right;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,157 @@
+/* General Page Styling */
+.home-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+#don{
+    position: relative;
+    right: 100px;
+    top: 30px;
+}
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff2b40ff;
+  padding: 0 30px;
+  color: white;
+  margin-top: 60px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: white;
+  color: #e63946;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hero Section with Canvas Animation */
+.blood-animation-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#bloodCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+.title h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.title h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Register Button Section */
+.register-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  position: relative;
+  z-index: 3;
+}
+
+.donor-box {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link-btn {
+  text-decoration: none;
+  color: white;
+  background: #e63946;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.link-btn:hover {
+  background: #c71c32;
+}
+
+/* About Section */
+#about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 80px 40px;
+  gap: 40px;
+}
+
+#about h1 {
+  color: #e63946;
+}
+
+#about p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+#about img {
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Why Donate Section */
+#why-donate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 100px 40px;
+  gap: 40px;
+}
+
+#why-donate img {
+  width: 350px;
+  border-radius: 12px;
+}
+
+#why-donate h1 {
+  color: #e63946;
+}
+
+#why-donate h4 {
+  margin-top: 20px;
+  color: #222;
+}
+
+#why-donate p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}

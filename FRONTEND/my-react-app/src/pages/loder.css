@@ -1,0 +1,38 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-top: 4px solid #c21807;  /* deep red */
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #c21807;
+  border-left: 4px solid transparent;
+  animation: spin 2s linear infinite;
+}
+
+.logo {
+  width: 400px; /* adjust for your logo size */
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

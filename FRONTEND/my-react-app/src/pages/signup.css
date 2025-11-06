@@ -1,0 +1,79 @@
+/* ===== Background ===== */
+#signup-bg {
+  background: linear-gradient(135deg, #ff1a1a, #b30000);
+  background-image: url("/images/bg-blood.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-card {
+  width: 420px;
+  height: 400px;
+  margin-top: 60px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 6px 25px rgba(255, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+.signup-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 35px rgba(255, 0, 0, 0.3);
+}
+.signup-card h3 {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: #b30000;
+}
+.fire .form-control,
+.fire-box .form-control {
+  background-color: #fff !important;
+  border: 2px solid #ccc !important;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.fire .form-control:focus,
+.fire-box .form-control:focus {
+  border-color: #ff1a1a !important;
+  box-shadow: 0 0 8px rgba(255, 26, 26, 0.3);
+}
+.form-label {
+  color: #e94848;
+  font-weight: 600;
+}
+.form-control::placeholder {
+  color: #f78a8a;
+  opacity: 0.8;
+}
+
+.btn-danger {
+  background: linear-gradient(90deg, #ff1a1a, #b30000);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.sing{
+    animation: none;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 26, 26, 0.4);
+}
+@media (max-width: 576px) {
+  .signup-card {
+    width: 90%;
+    padding: 25px;
+  }
+}

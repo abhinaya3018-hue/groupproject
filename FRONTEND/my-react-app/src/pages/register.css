@@ -1,0 +1,178 @@
+#reg {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none; /* removed black bg */
+  padding: 40px 0;
+}
+
+/* Card styling */
+.card {
+  width: 70vw;
+  border: 3px solid #ff1a1a; /* red border */
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff; /* clean white background */
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  animation: floatUp 1s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.35);
+}
+
+/* Title styling */
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #c40000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+/* Inputs & selects */
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1.5px solid #ff4d4d;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+  border-color: #e60000;
+  transform: scale(1.02);
+}
+
+.form-label {
+  color: #d10000;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Button */
+.btn-danger {
+  background: linear-gradient(90deg, #ff1a1a, #b30000);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+}
+
+/* Message alert */
+.alert {
+  border-radius: 10px;
+  font-size: 0.95rem;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* Carousel Section */
+#img-card {
+  position: relative;
+  animation: fadeSlide 1.2s ease-in;
+}
+
+.carousel-inner img {
+  height: 550px; /* reduced height */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 1s ease;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.05);
+}
+
+/* === Animations === */
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4d4d;
+  }
+  100% {
+    text-shadow: 0 0 15px #ff3333, 0 0 25px #ff1a1a;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .card {
+    width: 90%;
+  }
+
+  .carousel-inner img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.4rem;
+  }
+  .carousel-inner img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 95%;
+    border: 2px solid #ff4d4d;
+  }
+  .carousel-inner img {
+    height: 250px;
+  }
+}

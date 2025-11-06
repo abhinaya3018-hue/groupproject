@@ -1,0 +1,43 @@
+.navbar {
+  background-color:white;
+  border-bottom: 3px solid #ff0000;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  color: #ff3333 !important;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-family: "Oswald", sans-serif;
+}
+
+.nav-link {
+  color: #060606 !important;
+  text-transform: uppercase;
+  margin: 0 10px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff0000 !important;
+  text-shadow: 0 0 10px red;
+}
+
+.navbar-toggler {
+  border-color: #ff0000;
+}
+
+.navbar-toggler-icon {
+  background-image: linear-gradient(to right, #ff0000, #b30000);
+}
+
+.fa-tint {
+  color: #ff0000;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px #ff0000); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 8px #ff0000); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 2px #ff0000); }
+}
