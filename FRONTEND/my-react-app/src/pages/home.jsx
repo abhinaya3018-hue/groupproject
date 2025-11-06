@@ -108,7 +108,7 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* Navbar */}
-      <nav className="hero-nav">
+      <nav className="hero-nav" id="id10">
         <h2>Welcome, {username}</h2>
         <div>
           <Link to="/donors" className="nav-link" id="don">
