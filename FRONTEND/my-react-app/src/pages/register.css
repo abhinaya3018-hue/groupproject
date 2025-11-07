@@ -124,7 +124,7 @@ h3 {
 
 .carousel-inner img {
   height: 500px; /* perfectly fits card height */
-  width: 100%;
+  width: 400px;
   object-fit: cover;
   border-radius: 0;
   transition: transform 1s ease;
