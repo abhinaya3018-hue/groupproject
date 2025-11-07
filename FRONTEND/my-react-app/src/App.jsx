@@ -11,11 +11,6 @@ import Homehero from './pages/homehero';
 import Loader from './pages/loder';
 import Loadersapp from './pages/loderapp';
 
-
-
-
-
-
 function App() {
 
   return (

@@ -13,13 +13,13 @@ const Home = () => {
     if (storedUsername) {
       setUsername(storedUsername);
     } else {
-      navigate("/login");
+      navigate("/home");
     }
   }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("username");
-    navigate("/login");
+    navigate("/home");
   };
 
   // Handle blood cell animation

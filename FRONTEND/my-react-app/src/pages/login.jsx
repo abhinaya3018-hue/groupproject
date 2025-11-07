@@ -30,7 +30,7 @@ export default function Login() {
         localStorage.setItem("token", response.data.token);
       }
 
-      navigate("/");
+      navigate("/loders");
     } catch (err) {
       if (err.response && err.response.data) {
         setError(err.response.data.detail || "Invalid username or password.");

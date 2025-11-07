@@ -80,11 +80,11 @@ export default function RegisterDonor() {
             <div id="donorCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner rounded-4 shadow-sm">
                 <div className="carousel-item active">
-                  <img src="/images/img 1.jpg" className="d-block " alt="Donate Blood"/></div>
+                  <img src="./src/assets/slider1.avif" className="d-block " alt="Donate Blood"/></div>
                 <div className="carousel-item">
-                  <img src="/images/img 2.jpg" className="d-block "alt="Save Lives"/></div>
+                  <img src="./src/assets/sliter2.webp" className="d-block "alt="Save Lives"/></div>
                 <div className="carousel-item">
-                  <img src="/images/img 3.jpg" className="d-block"alt="Blood Donation Camp"/></div>
+                  <img src="./src/assets/slider3.webp" className="d-block"alt="Blood Donation Camp"/></div>
               </div>
 
               <button className="carousel-control-prev" type="button" data-bs-target="#donorCarousel" data-bs-slide="prev"><span className="carousel-control-prev-icon bg-dark" ></span></button>
