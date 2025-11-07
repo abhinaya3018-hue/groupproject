@@ -1,44 +1,68 @@
-/* General Page Styling */
+/* === GENERAL PAGE STYLING === */
 .home-container {
   font-family: "Poppins", sans-serif;
   color: #333;
   overflow-x: hidden;
+  background: linear-gradient(120deg, #fff5f5, #ffe8e8);
+  animation: bgShift 10s ease-in-out infinite alternate;
 }
 
-/* Navbar */
-#don{
-    position: relative;
-    right: 100px;
-    top: 30px;
-}
+/* === NAVBAR === */
 .hero-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ff2b40ff;
-  padding: 0 30px;
+  background: linear-gradient(90deg, #e63946, #ff5c73);
+  padding: 5px 30px;
   color: white;
-  margin-top: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-top: 5%;
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.25);
+  animation: fadeSlideDown 1s ease forwards;
 }
 
 .nav-link {
-  text-decoration: none;
   color: white;
-  margin-right: 20px;
-  font-weight: bold;
+  margin-right: 25px;
+  font-weight: 600;
+  text-decoration: none;
+}
+#don{
+  position: relative;
+  right: 100px;
+  top: 30px;
+}
+.nav-link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .logout-btn {
   background: white;
   color: #e63946;
   border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.3s ease;
 }
 
-/* Hero Section with Canvas Animation */
+.logout-btn:hover {
+  background: #ffe3e3;
+  transform: scale(1.05);
+}
+
+/* === HERO SECTION === */
 .blood-animation-container {
   position: relative;
   height: 100vh;
@@ -58,100 +82,311 @@
   z-index: 2;
   text-align: center;
   color: white;
-  top: 40%;
+  top: 45%;
   transform: translateY(-40%);
+  animation: fadeFloat 2.5s ease-out forwards;
 }
 
 .title h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ff5c73, #ff9eaa, #ffe5e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
 }
 
 .title h3 {
   font-size: 1.2rem;
-  font-weight: 400;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInText 3s ease 1s forwards;
 }
 
-/* Register Button Section */
+/* === REGISTER SECTION === */
 .register-box {
   display: flex;
   justify-content: center;
   margin-top: 60px;
   position: relative;
   z-index: 3;
+  animation: fadeUp 2.2s ease forwards;
 }
 
 .donor-box {
-  background: #f8f9fa;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  animation: heartBeat 2.8s infinite ease-in-out;
 }
 
 .link-btn {
   text-decoration: none;
   color: white;
-  background: #e63946;
-  padding: 10px 20px;
-  border-radius: 8px;
+  background: linear-gradient(90deg, #e63946, #ff5c73);
+  padding: 12px 25px;
+  border-radius: 10px;
   font-weight: bold;
-  transition: background 0.3s;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .link-btn:hover {
-  background: #c71c32;
+  background: linear-gradient(90deg, #ff6f83, #ffa8a8);
+  transform: translateY(-3px) scale(1.08);
 }
 
-/* About Section */
+/* === ABOUT SECTION === */
 #about {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 80px 40px;
-  gap: 40px;
+  margin: 120px 40px;
+  gap: 60px;
+  animation: slideUpBlur 1.5s ease forwards;
 }
 
 #about h1 {
   color: #e63946;
+  font-size: 2.2rem;
 }
 
 #about p {
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 #about img {
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: 370px;
+  border-radius: 15px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Why Donate Section */
+#about img:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+/* === WHY DONATE SECTION === */
 #why-donate {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 100px 40px;
-  gap: 40px;
+  margin: 120px 40px;
+  gap: 60px;
+  animation: slideUpBlur 1.5s ease forwards;
 }
 
 #why-donate img {
-  width: 350px;
-  border-radius: 12px;
+  width: 370px;
+  border-radius: 15px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+#why-donate img:hover {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
 }
 
 #why-donate h1 {
   color: #e63946;
+  font-size: 2.2rem;
 }
 
 #why-donate h4 {
   margin-top: 20px;
   color: #222;
+  font-weight: 600;
 }
 
 #why-donate p {
   font-size: 1.05rem;
   line-height: 1.6;
   color: #444;
+}
+
+/* === SLIDER SECTION === */
+.slider {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ffe6e6, #ffd1d1);
+  border-top: 3px solid #ff5c73;
+  border-bottom: 3px solid #ff5c73;
+}
+
+.slider_row {
+  display: flex;
+  width: calc(300px * 10);
+  animation: waveSlide 25s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.slider_column {
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+.find {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 3px solid #e63946;
+  border-radius: 12px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+.find:hover {
+  transform: rotate(2deg) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+  filter: brightness(1.2);
+}
+
+/* === MODERN ANIMATION STYLES === */
+
+/* Navbar: slide + fade + slight color pulse */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+    background: linear-gradient(90deg, #c53030, #ff4d6d);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(90deg, #e63946, #ff5c73);
+  }
+}
+
+/* Hero Title: floating glow text */
+@keyframes fadeFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: brightness(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Gradient shimmer with pulse */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+    filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 100, 100, 0.7));
+  }
+  100% {
+    background-position: 200px 0;
+    filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.4));
+  }
+}
+
+/* Smooth text fade-in with scale */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Heartbeat replaced with elastic bounce */
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.08);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+}
+
+/* About & Why Sections: soft rise with rotation */
+@keyframes slideUpBlur {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotate(-2deg);
+    filter: blur(5px);
+  }
+  60% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+/* Slider: slow wavy motion with easing */
+@keyframes waveSlide {
+  0% {
+    transform: translateX(0) skewX(0deg);
+  }
+  50% {
+    transform: translateX(-25%) skewX(2deg);
+  }
+  100% {
+    transform: translateX(-50%) skewX(0deg);
+  }
+}
+
+/* Background: gradient pulse & slight hue rotation */
+@keyframes bgShift {
+  0% {
+    background: linear-gradient(120deg, #fff5f5, #ffe8e8);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background: linear-gradient(120deg, #ffdada, #ffe5e5);
+    filter: hue-rotate(10deg);
+  }
+  100% {
+    background: linear-gradient(120deg, #ffeaea, #ffd6d6);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* FadeUp replaced with elastic entrance */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) scale(0.9);
+  }
+  70% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

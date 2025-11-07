@@ -27,7 +27,6 @@ const Signup = () => {
     try {
       const response = await axios.post("http://127.0.0.1:8000/api/signup/", formData);
       console.log(response.data);
-      alert("Signup successful!");
       navigate("/login");
     } catch (err) {
       if (err.response && err.response.data) {

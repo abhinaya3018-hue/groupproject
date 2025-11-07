@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./login.css"; 
+import "./login.css";
 
 export default function Login() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
-
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -24,26 +23,29 @@ export default function Login() {
     setError("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/login/",
+        formData
+      );
 
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("username", formData.username); // ✅ store username
       }
 
-      navigate("/loders");
+      navigate("/home"); // ✅ remove extra space
     } catch (err) {
-      if (err.response && err.response.data) {
-        setError(err.response.data.detail || "Invalid username or password.");
-      } else {
-        setError("Network error. Please check your connection.");
-      }
+      const message =
+        err.response?.data?.detail ||
+        "Invalid username or password.";
+      setError(message);
     }
   };
 
   return (
     <div id="login-bg" className="d-flex justify-content-center align-items-center">
-      <div className="card shadow-lg p-4 " id="card">
-        <h3 className="text-center mb-4 text-danger log"> Login</h3>
+      <div className="card shadow-lg p-4" id="card">
+        <h3 className="text-center mb-4 text-danger log">Login</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-3 input-box">
             <label className="form-label fw-semibold">Username</label>
@@ -60,7 +62,7 @@ export default function Login() {
 
           <div className="mb-3 input-box">
             <label className="form-label fw-semibold">Password</label>
-            <input id="place"
+            <input
               type="password"
               className="form-control"
               name="password"
@@ -71,7 +73,9 @@ export default function Login() {
             />
           </div>
 
-          {error && <div className="alert alert-danger py-2 text-center">{error}</div>}
+          {error && (
+            <div className="alert alert-danger py-2 text-center">{error}</div>
+          )}
 
           <button type="submit" className="btn btn-danger w-100 fw-bold">
             Login

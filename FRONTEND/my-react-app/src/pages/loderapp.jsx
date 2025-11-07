@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./loder";
-import Home from "./home";
+import Home from "./homehero";
 
 function Loadersapp() {
   const [loading, setLoading] = useState(true);

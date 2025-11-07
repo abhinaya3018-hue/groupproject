@@ -1,28 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./home.css"; // updated single CSS import
+import "./home.css";
 
 const Home = () => {
   const [username, setUsername] = useState("");
   const canvasRef = useRef(null);
   const navigate = useNavigate();
 
-  // Handle authentication
+  // ✅ Handle authentication
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
       setUsername(storedUsername);
     } else {
-      navigate("/home");
+      navigate("/home", { replace: true }); // redirect to login if not logged in
     }
   }, [navigate]);
 
+  // ✅ Logout function
   const handleLogout = () => {
     localStorage.removeItem("username");
-    navigate("/home");
+    navigate("/home", { replace: true }); // redirect to login after logout
   };
 
-  // Handle blood cell animation
+  // ✅ Handle blood cell animation
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -107,20 +108,18 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Navbar */}
       <nav className="hero-nav" id="id10">
-        <h2>Welcome, {username} </h2>
+        <h2>Welcome, {username}</h2>
         <div>
           <Link to="/donors" className="nav-link" id="don">
             Donors
           </Link>
-          <button onClick={handleLogout} className="logout-btn">
+          <button onClick={handleLogout} className="logout-btn" >
             Logout
           </button>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
         <div className="title">
@@ -130,7 +129,6 @@ const Home = () => {
             surgery, or cancer care.”
           </h3>
         </div>
-
         <div id="registerbox" className="register-box">
           <div id="donorbox" className="donor-box">
             <Link to="/register" className="link-btn">
@@ -140,7 +138,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+
+       <div className="slider d-flex justify-content-center align-items-center mt-5">
+  <div className="slider_row d-flex">
+    {/* Original 5 images */}
+    <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
+
+    {/* Duplicate them once more for seamless looping */}
+    <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
+  </div>
+</div>
+
       <section id="about">
         <div>
           <h1>About Us</h1>
@@ -157,7 +173,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Donate Section */}
       <section id="why-donate">
         <div>
           <img src="./src/assets/OIP.webp" alt="donor" />
@@ -170,7 +185,6 @@ const Home = () => {
             for accident victims, surgeries, cancer treatments, and patients
             with blood disorders like thalassemia.
           </p>
-
           <h4>Promotes Your Own Health</h4>
           <p>
             Donating blood helps maintain healthy iron levels, reduces the risk

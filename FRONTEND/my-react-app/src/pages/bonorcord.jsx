@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./donordetail.css"; // import the CSS file
 
 export default function DonorDetail() {
   const { id } = useParams();
@@ -15,50 +16,15 @@ export default function DonorDetail() {
   if (!donor) return <h3>Loading...</h3>;
 
   return (
-    <div
-      style={{
-        maxWidth: "500px",
-        margin: "40px auto",
-        padding: "20px",
-        background: "#fff",
-        borderRadius: "12px",
-        boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "10px",
-    marginBottom: "10px",
-  }}
->
-  <div
-    style={{
-      width: "50px",
-      height: "50px",
-      borderRadius: "50%",
-      background: "#eee",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "22px",
-      fontWeight: "bold",
-      color: "#555",
-    }}
-  >
-    {donor.name?.[0]?.toUpperCase() || "?"}
-  </div>
-  <h2 style={{ textAlign: "center", color: "#1d4ed8", margin: 0 }}>
-    {donor.name}
-  </h2>
-</div>
+    <div className="donor-container">
+      <div className="donor-header">
+        <div className="donor-avatar">
+          {donor.name?.[0]?.toUpperCase() || "?"}
+        </div>
+        <h2 className="donor-name">{donor.name}</h2>
+      </div>
 
-       
-
-      <div style={{ marginTop: "20px", lineHeight: "1.8" }}>
+      <div className="donor-details">
         <p>
           <strong>Blood Group:</strong> {donor.blood_group}
         </p>
@@ -73,20 +39,9 @@ export default function DonorDetail() {
         </p>
       </div>
 
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <div className="donor-footer">
         <Link to="/home">
-          <button
-            style={{
-              background: "#e63946",
-              color: "#fff",
-              border: "none",
-              padding: "8px 16px",
-              borderRadius: "8px",
-              cursor: "pointer",
-            }}
-          >
-            Back to List
-          </button>
+          <button className="back-button">Back to List</button>
         </Link>
       </div>
     </div>

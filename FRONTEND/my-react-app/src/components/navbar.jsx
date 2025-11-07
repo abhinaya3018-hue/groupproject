@@ -10,7 +10,6 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <Link className="nav-link active" to="/"><i className="fa fa-home"></i> Home</Link>
             <Link className="nav-link" to="/signup"><i className="fa fa-address-card"></i> Signup</Link>
             <Link className="nav-link" to="/login"><i className="fa fa-sign-in"></i> Login</Link>
           </div>

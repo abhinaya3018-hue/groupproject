@@ -10,6 +10,7 @@ import DonorDetail from './pages/bonorcord';
 import Homehero from './pages/homehero';
 import Loader from './pages/loder';
 import Loadersapp from './pages/loderapp';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/loders"  element={<Loadersapp/>} />
-        <Route path="/" element={<Homehero />} />
+        <Route path="/"  element={<Loadersapp/>} />
+        <Route path="/homehero" element={<Homehero />} />
         <Route path="/donors" element={<DonorList />} />
         <Route path="/register" element={<RegisterDonor />} />
         <Route path="/signup" element={<Signup/>} />
@@ -31,8 +32,6 @@ function App() {
 
 
       </Routes> 
-
-     
     </BrowserRouter>
 
     <Footer />
