@@ -79,7 +79,7 @@
 
 .title {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   text-align: center;
   color: white;
   top: 45%;
@@ -88,20 +88,16 @@
 }
 
 .title h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  background: linear-gradient(90deg, #ff5c73, #ff9eaa, #ffe5e5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+  position: relative;
+  bottom:150px ;
 }
 
 .title h3 {
   font-size: 1.2rem;
-  margin-top: 20px;
   opacity: 0;
   animation: fadeInText 3s ease 1s forwards;
+  position: relative;
+  bottom: 150px;
 }
 
 /* === REGISTER SECTION === */
@@ -110,7 +106,8 @@
   justify-content: center;
   margin-top: 60px;
   position: relative;
-  z-index: 3;
+  top: 20%;
+  z-index: 5;
   animation: fadeUp 2.2s ease forwards;
 }
 

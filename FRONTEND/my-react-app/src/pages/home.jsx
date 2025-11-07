@@ -122,8 +122,8 @@ const Home = () => {
 
       <section className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div className="title">
-          <h1>RED CONNECTS</h1>
+        <div className="title" >
+          <h1>RED CONNECT</h1>
           <h3>
             “Supplying vital blood components for patients with illness, trauma,
             surgery, or cancer care.”
