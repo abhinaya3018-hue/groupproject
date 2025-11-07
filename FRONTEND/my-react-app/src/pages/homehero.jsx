@@ -113,7 +113,6 @@ const Homehero = () => {
       </div>
     </div>
 
-
     <div id="id1">
       <div>
         <img src="./src/assets/OIP.webp" alt="donor" />
@@ -131,6 +130,24 @@ const Homehero = () => {
     </div>
 
     
+   <div className="slider d-flex justify-content-center align-items-center mt-5">
+  <div className="slider_row d-flex">
+    {/* Original 5 images */}
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="1" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="2" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="3" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="4" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="5" className="img-fluid find" /></div>
+
+    {/* Duplicate them once more for seamless looping */}
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="6" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="7" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="8" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="9" className="img-fluid find" /></div>
+    <div className="slider_column"><img src="./src/assets/OIP.webp" alt="10" className="img-fluid find" /></div>
+  </div>
+</div>
+
 
     </>
     
