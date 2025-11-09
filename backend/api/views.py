@@ -24,7 +24,7 @@ class BloodRequestViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def donor_group_counts(request):
-    # Count donors grouped by blood group
+    
     data = Donor.objects.values('blood_group').order_by('blood_group')
     result = {}
     for item in data:
@@ -32,10 +32,10 @@ def donor_group_counts(request):
         result[group] = result.get(group, 0) + 1
     return Response(result) 
 
-@api_view(['POST', 'OPTIONS'])  # ✅ allow OPTIONS for CORS preflight
+@api_view(['POST', 'OPTIONS']) 
 def signup(request):
     if request.method == 'OPTIONS':
-        return Response(status=200)  # ✅ preflight success
+        return Response(status=200) 
 
     username = request.data.get('username')
     email = request.data.get('email')
@@ -53,10 +53,10 @@ def signup(request):
     return Response({'detail': 'Signup successful!'}, status=status.HTTP_201_CREATED)
 
 
-@api_view(['POST', 'OPTIONS'])  # ✅ allow OPTIONS for CORS preflight
+@api_view(['POST', 'OPTIONS']) 
 def login_view(request):
     if request.method == 'OPTIONS':
-        return Response(status=200)  # ✅ respond to preflight
+        return Response(status=200) 
 
     username = request.data.get('username')
     password = request.data.get('password')
