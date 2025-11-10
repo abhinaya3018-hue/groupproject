@@ -10,7 +10,6 @@ import DonorDetail from './pages/bonorcord';
 import Homehero from './pages/homehero';
 import Loader from './pages/loder';
 import Loadersapp from './pages/loderapp';
-import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
 
