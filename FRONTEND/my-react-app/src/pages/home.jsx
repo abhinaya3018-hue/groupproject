@@ -23,7 +23,7 @@ const Home = () => {
     navigate("/home", { replace: true }); // redirect to login after logout
   };
 
-  // ✅ Handle blood cell animation
+  // ✅ Blood cell animation
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -108,21 +108,10 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <nav className="hero-nav" id="id10">
-        <h2>Welcome, {username}</h2>
-        <div>
-          <Link to="/donors" className="nav-link" id="don">
-            Donors
-          </Link>
-          <button onClick={handleLogout} className="logout-btn" >
-            Logout
-          </button>
-        </div>
-      </nav>
-
+      {/* === Hero Section === */}
       <section className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div className="title" >
+        <div className="title">
           <h1>RED CONNECT</h1>
           <h3>
             “Supplying vital blood components for patients with illness, trauma,
@@ -138,25 +127,23 @@ const Home = () => {
         </div>
       </section>
 
+      {/* === Image Slider === */}
+      <div className="slider d-flex justify-content-center align-items-center mt-5">
+        <div className="slider_row d-flex">
+          <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
+        </div>
+      </div>
 
-       <div className="slider d-flex justify-content-center align-items-center mt-5">
-  <div className="slider_row d-flex">
-    {/* Original 5 images */}
-    <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
-
-    {/* Duplicate them once more for seamless looping */}
-    <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
-    <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
-  </div>
-</div>
-
+      {/* === About Section === */}
       <section id="about">
         <div>
           <h1>About Us</h1>
@@ -173,6 +160,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* === Why Donate Section === */}
       <section id="why-donate">
         <div>
           <img src="./src/assets/OIP.webp" alt="donor" />
@@ -192,6 +180,26 @@ const Home = () => {
           </p>
         </div>
       </section>
+
+      {/* === Footer === */}
+      <footer className="footer">
+        <div id="fimg">
+        <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
+        <h3 id="he1">RED CONNECT</h3>
+        <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
+        </div>
+        <p>© 2025 Red Connect | All Rights Reserved</p>
+        <p>
+          Made with  to support life-saving blood donations.
+        </p>
+        <div className="footer-links">
+          <Link to="/donors">View Donors</Link>
+          <span> | </span>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        </div>
+      </footer>
     </div>
   );
 };

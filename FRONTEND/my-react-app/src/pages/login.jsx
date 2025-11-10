@@ -1,85 +1,90 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+
+    const handleMouseMove = (e) => {
+      const { left, top, width, height } = card.getBoundingClientRect();
+      const x = (e.clientX - left) / width;
+      const y = (e.clientY - top) / height;
+      const rotateX = (y - 0.5) * 10;
+      const rotateY = (x - 0.5) * -10;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const resetTilt = () => {
+      card.style.transform = "rotateX(0) rotateY(0)";
+    };
+
+    card.addEventListener("mousemove", handleMouseMove);
+    card.addEventListener("mouseleave", resetTilt);
+    return () => {
+      card.removeEventListener("mousemove", handleMouseMove);
+      card.removeEventListener("mouseleave", resetTilt);
+    };
+  }, []);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/login/",
-        formData
-      );
-
+      const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("username", formData.username); // ✅ store username
+        localStorage.setItem("username", formData.username);
       }
-
-      navigate("/home"); // ✅ remove extra space
+      navigate("/home");
     } catch (err) {
-      const message =
-        err.response?.data?.detail ||
-        "Invalid username or password.";
+      const message = err.response?.data?.detail || "Invalid username or password.";
       setError(message);
     }
   };
 
   return (
-    <div id="login-bg" className="d-flex justify-content-center align-items-center">
-      <div className="card shadow-lg p-4" id="card">
-        <h3 className="text-center mb-4 text-danger log">Login</h3>
+    <div className="login-page">
+      <div className="background-blur" />
+      <div className="login-card" ref={cardRef}>
+        <h2 className="title">Login</h2>
+
         <form onSubmit={handleSubmit}>
-          <div className="mb-3 input-box">
-            <label className="form-label fw-semibold">Username</label>
+          <div className="form-group">
             <input
               type="text"
-              className="form-control"
               name="username"
               value={formData.username}
               onChange={handleChange}
-              placeholder="Enter username"
               required
             />
+            <label>Username</label>
           </div>
 
-          <div className="mb-3 input-box">
-            <label className="form-label fw-semibold">Password</label>
+          <div className="form-group">
             <input
               type="password"
-              className="form-control"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter password"
               required
             />
+            <label>Password</label>
           </div>
 
-          {error && (
-            <div className="alert alert-danger py-2 text-center">{error}</div>
-          )}
+          {error && <p className="error">{error}</p>}
 
-          <button type="submit" className="btn btn-danger w-100 fw-bold">
-            Login
-          </button>
+          <button type="submit" className="btn-login">Login</button>
         </form>
       </div>
     </div>

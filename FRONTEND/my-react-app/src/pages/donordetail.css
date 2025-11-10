@@ -3,13 +3,12 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
 }
 
 /* Donor card */
 .donor-container {
   max-width: 500px;
-  margin: 8% auto;
+  margin: 150px auto;
   padding: 30px;
   background: #ffffff;
   border-radius: 16px;

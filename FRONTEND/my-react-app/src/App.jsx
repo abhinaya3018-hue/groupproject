@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Footer from "./components/footer";
 import DonorList from './pages/Donorlist';
 import RegisterDonor from './pages/RegisterDonor';
 import Signup from './pages/signin';
 import Login from './pages/login';
 import Home from './pages/home';
 import DonorDetail from './pages/bonorcord';
-import Homehero from './pages/homehero';
+import Homehero from './pages/homehero';  
 import Loader from './pages/loder';
 import Loadersapp from './pages/loderapp';
 
@@ -33,7 +32,6 @@ function App() {
       </Routes> 
     </BrowserRouter>
 
-    <Footer />
 </>
     
   );

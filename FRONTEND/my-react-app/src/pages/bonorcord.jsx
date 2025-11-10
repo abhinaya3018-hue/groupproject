@@ -16,6 +16,7 @@ export default function DonorDetail() {
   if (!donor) return <h3>Loading...</h3>;
 
   return (
+    <>
     <div className="donor-container">
       <div className="donor-header">
         <div className="donor-avatar">
@@ -40,10 +41,12 @@ export default function DonorDetail() {
       </div>
 
       <div className="donor-footer">
-        <Link to="/home">
+        <Link to="/donors">
           <button className="back-button">Back to List</button>
         </Link>
       </div>
     </div>
+
+    </>
   );
 }

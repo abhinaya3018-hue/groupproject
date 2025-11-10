@@ -23,7 +23,7 @@ body{
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
   text-shadow: 0 0 20px #ff0000;
   animation: glow 2s ease-in-out infinite alternate;
@@ -167,4 +167,38 @@ body{
   100% {
     transform: translateX(0);
   }
+}
+
+/*footer*/
+.footer {
+  background: #440000;
+  color: #fff;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ffcccc;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
