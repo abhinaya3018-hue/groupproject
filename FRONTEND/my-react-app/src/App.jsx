@@ -12,12 +12,8 @@ import Loadersapp from './pages/loderapp';
 import BloodGroupStats from './pages/bloodgroup';
 import RequestForm from './pages/requestform';
 
-// ✅ Import the custom hook
-import useNotifications from './hooks/useNotifications';
-
 function App() {
   // ✅ Call the hook so that WebSocket stays active globally
-  useNotifications();
 
   return (
     <>
@@ -35,6 +31,7 @@ function App() {
           <Route path="/loder"  element={<Loader />} />
           <Route path="/bloodgroup" element={<BloodGroupStats />} />
           <Route path="/request/:id" element={<RequestForm />} />
+        
         </Routes> 
       </BrowserRouter>
     </>

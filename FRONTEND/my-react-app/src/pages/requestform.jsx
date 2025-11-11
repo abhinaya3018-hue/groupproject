@@ -1,13 +1,14 @@
+// src/pages/RequestForm.jsx
 import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import API from "../api"; // ✅ your axios instance
+import axios from 'axios';
 import "./requestform.css";
 
 export default function RequestForm() {
-  const { id } = useParams();
+  const { id } = useParams(); // donor ID from URL
   const navigate = useNavigate();
   const location = useLocation();
-  const donor = location.state?.donor || {};
+  const donor = location.state?.donor || {}; // donor object passed via Link
 
   const [formData, setFormData] = useState({
     name: "",
@@ -18,28 +19,51 @@ export default function RequestForm() {
 
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setLoading(true);
+  setError("");
 
-    try {
-      // ✅ Using your API instance (automatically adds baseURL)
-      await API.post(`send_request/${id}/`, formData);
+  try {
+   
+     const payload = {
+        requester_name: formData.name,
+        requester_phone: formData.phone,
+        requester_email: formData.email,
+        message: formData.message,
+    };
 
-      // OR if you prefer full axios syntax, uncomment below:
-      // await axios.post(`http://127.0.0.1:8000/api/send_request/${id}/`, formData);
+    // Use 'id' from useParams() instead of undefined donorId
+   const response = await axios.post(
+  `http://127.0.0.1:8000/api/send_request/${id}/`,
+  payload
+);
 
-      setSuccess(true);
-      setTimeout(() => navigate("/donors"), 2000);
-    } catch (err) {
-      console.error("❌ Error sending request:", err);
-      setError("Failed to send request. Please try again.");
-    }
-  };
+    console.log(response.data);
+    setSuccess(true);
+
+    // Redirect to donors page after 2 seconds
+    setTimeout(() => navigate("/donors"), 2000);
+  } catch (err) {
+    console.error("❌ Error sending request:", err);
+    setError(
+      err.response?.data?.detail || "Failed to send request. Please try again."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+
 
   return (
     <div className="request-form-container">
@@ -118,8 +142,12 @@ export default function RequestForm() {
           />
         </div>
 
-        <button type="submit" className="btn btn-danger w-100 fw-bold">
-          Send Request
+        <button
+          type="submit"
+          className="btn btn-danger w-100 fw-bold"
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Send Request"}
         </button>
       </form>
     </div>

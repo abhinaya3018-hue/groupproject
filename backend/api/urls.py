@@ -11,5 +11,5 @@ urlpatterns = [
     path('donor_group_counts/', donor_group_counts, name='donor_group_counts'),
     path('signup/', signup, name='signup'),
     path('login/', login_view, name='login'),
-    path('send_request/<int:donor_id>/', send_request, name='send_request'),  # ✅ Add this line
+    path('api/send_request/<int:id>/', send_request, name='send_request'),
 ]

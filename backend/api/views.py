@@ -10,6 +10,15 @@ from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 from django.db.models import Count
 
+from django.shortcuts import get_object_or_404
+from .models import Donor, Request
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+from rest_framework.response import Response
+
+
+
 
 class DonorViewSet(viewsets.ModelViewSet):
     queryset = Donor.objects.all().order_by('-created_at')
@@ -73,3 +82,29 @@ def login_view(request):
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
 
 
+
+@csrf_exempt
+@api_view(['POST'])
+def send_request(request, id):
+    """
+    Send a request to a donor.
+    """
+    donor = get_object_or_404(Donor, id=id)
+
+    name = request.data.get('name')
+    phone = request.data.get('phone')
+    email = request.data.get('email')
+    message = request.data.get('message', '')
+
+    if not name or not phone or not email:
+        return Response({'detail': 'Name, phone, and email are required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    req = Request.objects.create(
+        donor=donor,
+        name=name,
+        phone=phone,
+        email=email,
+        message=message
+    )
+
+    return Response({'detail': f'Request sent to {donor.name} successfully!'}, status=status.HTTP_201_CREATED)
