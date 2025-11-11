@@ -1,20 +1,15 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import DonorViewSet, BloodRequestViewSet
-from django.urls import path
-from . import views
+from .views import DonorViewSet, BloodRequestViewSet, donor_group_counts, signup, login_view, send_request
 
-
-# Create router and register viewsets
 router = DefaultRouter()
-router.register('donors', DonorViewSet)
-router.register('requests', BloodRequestViewSet)
+router.register(r'donors', DonorViewSet)
+router.register(r'bloodrequests', BloodRequestViewSet)
 
-# Include router URLs
 urlpatterns = [
     path('', include(router.urls)),
-    #  path('donors/', views.donor_list),  # your existing endpoint
-    path('donors/group_counts/', views.donor_group_counts),
-    path('signup/', views.signup, name='signup'),
-    path('login/', views.login_view, name='login'),
+    path('donor_group_counts/', donor_group_counts, name='donor_group_counts'),
+    path('signup/', signup, name='signup'),
+    path('login/', login_view, name='login'),
+    path('send_request/<int:donor_id>/', send_request, name='send_request'),  # ✅ Add this line
 ]

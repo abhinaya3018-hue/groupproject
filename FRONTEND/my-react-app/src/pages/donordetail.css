@@ -1,127 +1,135 @@
-/* Page background */
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Donor card */
+/* 🌸 Page Base */
 .donor-container {
-  max-width: 500px;
-  margin: 150px auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 40px 20px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin-top: 5%;
 }
 
-.donor-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Header section */
-.donor-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+/* 🔙 Back Link */
+.back-wrapper {
   margin-bottom: 20px;
-  animation: slideDown 0.8s ease-in-out;
 }
 
-/* Avatar circle */
-.donor-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f94144, #f3722c);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(249, 65, 68, 0.4);
-  animation: bounce 1.8s infinite ease-in-out;
-}
-
-/* Donor name */
-.donor-name {
-  color: #1d3557;
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-/* Donor details text */
-.donor-details {
-  margin-top: 25px;
-  line-height: 1.8;
-  text-align: left;
-  color: #333;
-}
-
-.donor-details p strong {
-  color: #e63946;
-}
-
-/* Footer and button */
-.donor-footer {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.back-button {
-  background: linear-gradient(135deg, #e63946, #ff4b5c);
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
+.back-link {
+  text-decoration: none;
+  color: #334155;
   font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  color: #dc2626;
+}
+
+/* 🩸 Heading */
+.donor-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 30px;
+}
+
+/* 🧩 Filter Section */
+.filter-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.filter-label {
+  margin-left: 45%;
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.filter-select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-select:hover {
+  border-color: #dc2626;
+}
+
+/* 📋 Table */
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.donor-table {
+  width: 70%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.table-header {
+  background-color: #dc2626;
+  color: #fff;
+  text-align: center;
+}
+
+.table-header th {
+  padding: 14px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.table-row {
+  text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
 }
 
-.back-button:hover {
-  background: linear-gradient(135deg, #d62828, #f77f00);
-  box-shadow: 0 6px 18px rgba(230, 57, 70, 0.5);
-  transform: scale(1.05);
+.table-row:hover {
+  background-color: #fef2f2;
 }
 
-/* ---------------- Animations ---------------- */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.table-row td {
+  padding: 12px;
+  font-size: 15px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ❤️ Blood Group Highlight */
+.blood-group {
+  color: #dc2626;
+  font-weight: 600;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+.request-btn {
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.request-btn:hover {
+  background: linear-gradient(90deg, #ff6a3d, #ff4b6b);
+  box-shadow: 0 0 8px rgba(255, 75, 107, 0.6);
+}
+
+
+/* 🕳 Empty State */
+.empty-row {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
 }

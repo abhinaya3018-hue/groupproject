@@ -118,14 +118,27 @@ const Home = () => {
             surgery, or cancer care.”
           </h3>
         </div>
-        <div id="registerbox" className="register-box">
-          <div id="donorbox" className="donor-box">
-            <Link to="/register" className="link-btn">
-              Register as Donor
-            </Link>
-          </div>
-        </div>
       </section>
+
+       { /*page2*/}
+      <div id="page2">
+  <div>
+    <img id="giftimg" src="./src/assets/OI.webp" alt="" />
+  </div>
+  <div>
+    <div id="registerbox" className="register-box">
+      <div id="donorbox" className="donor-box">
+        <Link to="/register" className="link-btn">Register as Donor</Link>
+      </div>
+      <div>
+      <div id="donorlistbox">
+        <Link to="/donors" className="link-btn"> Donors   list </Link>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* === Image Slider === */}
       <div className="slider d-flex justify-content-center align-items-center mt-5">
@@ -186,8 +199,9 @@ const Home = () => {
         <div id="fimg">
         <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
         <h3 id="he1">RED CONNECT</h3>
-        <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
+        <p id="pg1">The Red Connect is a voluntary organization with over 1200 branches</p>
         </div>
+        <div></div>
         <p>© 2025 Red Connect | All Rights Reserved</p>
         <p>
           Made with  to support life-saving blood donations.

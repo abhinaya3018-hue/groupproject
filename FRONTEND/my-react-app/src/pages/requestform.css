@@ -1,0 +1,119 @@
+/* === Request Form Page Styling === */
+
+.request-form-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #ffe3e3, #ffbaba, #ff5c5c);
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.request-form {
+  background-color: #fff;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.request-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* === Headings === */
+.request-form-container h3 {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #b30000;
+}
+
+/* === Labels === */
+.request-form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* === Inputs & Textarea === */
+.request-form input,
+.request-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.request-form input:focus,
+.request-form textarea:focus {
+  border-color: #ff3333;
+  box-shadow: 0 0 4px rgba(255, 50, 50, 0.4);
+}
+
+/* === Textarea === */
+.request-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* === Submit Button === */
+.request-form button {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.1s ease-in;
+}
+
+.request-form button:hover {
+  background-color: #d90429;
+}
+
+.request-form button:active {
+  transform: scale(0.97);
+}
+
+/* === Alerts === */
+.alert {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #e6ffed;
+  color: #007a29;
+  border: 1px solid #9ae6b4;
+}
+
+.alert-danger {
+  background-color: #ffe6e6;
+  color: #a10000;
+  border: 1px solid #f5b5b5;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .request-form {
+    padding: 1.5rem;
+  }
+  .request-form-container h3 {
+    font-size: 1.5rem;
+  }
+}

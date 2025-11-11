@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 from rest_framework import status
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate
+from django.db.models import Count
+
 
 class DonorViewSet(viewsets.ModelViewSet):
     queryset = Donor.objects.all().order_by('-created_at')
@@ -24,13 +26,16 @@ class BloodRequestViewSet(viewsets.ModelViewSet):
 
 @api_view(['GET'])
 def donor_group_counts(request):
-    
-    data = Donor.objects.values('blood_group').order_by('blood_group')
-    result = {}
-    for item in data:
-        group = item['blood_group']
-        result[group] = result.get(group, 0) + 1
-    return Response(result) 
+    try:
+        data = (
+            Donor.objects.values('blood_group')
+            .annotate(count=Count('blood_group'))
+            .order_by('blood_group')
+        )
+        return Response(list(data))
+    except Exception as e:
+        print("Error in donor_group_counts:", e)
+        return Response({"error": str(e)}, status=500)
 
 @api_view(['POST', 'OPTIONS']) 
 def signup(request):
@@ -66,6 +71,5 @@ def login_view(request):
         return Response({'detail': 'Login successful'}, status=status.HTTP_200_OK)
     else:
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
-    
-       
+
 

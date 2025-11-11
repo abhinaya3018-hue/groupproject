@@ -39,13 +39,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',       # ✅ Add this line
-    'api',               # your app
+    'api',  
+    'notifications',  
+    'channels',       
 ]
 
-CORS_ALLOWED_ORIGINS = [
- "http://localhost:5173",
-  # react dev server (change if using Vite port)
-]
+# point to your ASGI application (create this file next)
+
+
+ASGI_APPLICATION = "backend.asgi.application"
+
+# Recommended: use Redis in dev/prod
+CHANNEL_LAYERS = {
+    "default": {"BACKEND": "channels.layers.InMemoryChannelLayer",},
+}
+
+CORS_ALLOW_ALL_ORIGINS = True 
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:5173"]  
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # ✅ Must be at the very top
@@ -59,6 +69,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+
 
 CORS_ALLOW_METHODS = [
     'DELETE',
