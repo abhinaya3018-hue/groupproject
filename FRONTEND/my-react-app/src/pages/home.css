@@ -22,46 +22,47 @@
   z-index: 1;
 }
 
-.title {
+.title2 {
   position: relative;
   z-index: 4;
-  text-align: center;
   color: white;
   top: 45%;
   transform: translateY(-40%);
   animation: fadeFloat 2.5s ease-out forwards;
-  margin-top: 80px;
+  margin-top: 10%;
 }
 
-.title h1 {
+.title2 h1 {
+  width: 100%;
+  color: white;
+  font-size: 4em;
+  font-weight: bold;
+  text-shadow: 0 0 20px #ff0000;
+  animation: glow 2s ease-in-out infinite alternate;
   position: relative;
-  bottom:100px ;
+  bottom: 150px;
+  left: 7.5%;
+
+  
 }
 
-.title h3 {
+.title2 h3 {
   font-size: 1.2rem;
   opacity: 0;
   animation: fadeInText 3s ease 1s forwards;
   position: relative;
-  bottom: 100px;
+  bottom: 120px;
+  right: 25%;
+  color: white;
 }
 
-/* page2*/
-#page2{
-  display: flex;
-  padding: 30px;
-}
-#giftimg{
-  height: 400px;
-  border-radius: 10px;
-  margin-left: 5%;
-}
 
 /* === REGISTER SECTION === */
 .register-box {
   position: relative;
-  top: 80px;
-  left: 100%;
+  left: 60%;
+  width: 300px;
+  top: 20px;
   animation: fadeUp 2.2s ease forwards;
 }
 

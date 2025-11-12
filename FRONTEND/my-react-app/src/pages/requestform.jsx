@@ -27,25 +27,25 @@ export default function RequestForm() {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
   setLoading(true);
   setError("");
 
   try {
-   
-     const payload = {
-        requester_name: formData.name,
-        requester_phone: formData.phone,
-        requester_email: formData.email,
-        message: formData.message,
+    // Payload keys must match Django view: name, phone, email, message
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
     };
 
-    // Use 'id' from useParams() instead of undefined donorId
-   const response = await axios.post(
-  `http://127.0.0.1:8000/api/send_request/${id}/`,
-  payload
-);
+    // Use 'id' from useParams() for donor ID
+    const response = await axios.post(
+      `http://127.0.0.1:8000/api/send_request/${id}/`,
+      payload
+    );
 
     console.log(response.data);
     setSuccess(true);
@@ -53,7 +53,7 @@ export default function RequestForm() {
     // Redirect to donors page after 2 seconds
     setTimeout(() => navigate("/donors"), 2000);
   } catch (err) {
-    console.error("❌ Error sending request:", err);
+    console.error(" Error sending request:", err);
     setError(
       err.response?.data?.detail || "Failed to send request. Please try again."
     );
@@ -67,7 +67,7 @@ export default function RequestForm() {
 
   return (
     <div className="request-form-container">
-      <h3 className="text-danger text-center fw-bold mb-4">
+      <h3 id="reqh3" className=" text-center fw-bold mt-5">
         Blood Request Form
       </h3>
 

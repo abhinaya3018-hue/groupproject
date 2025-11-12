@@ -111,33 +111,28 @@ const Home = () => {
       {/* === Hero Section === */}
       <section className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div className="title">
+        <div className="title2">
           <h1>RED CONNECT</h1>
           <h3>
-            “Supplying vital blood components for patients with illness, trauma,
-            surgery, or cancer care.”
+           Every donor is a hero without a cape
           </h3>
         </div>
-      </section>
 
-       { /*page2*/}
-      <div id="page2">
-  <div>
-    <img id="giftimg" src="./src/assets/OI.webp" alt="" />
-  </div>
-  <div>
+
+      
     <div id="registerbox" className="register-box">
       <div id="donorbox" className="donor-box">
         <Link to="/register" className="link-btn">Register as Donor</Link>
       </div>
       <div>
       <div id="donorlistbox">
-        <Link to="/donors" className="link-btn"> Donors   list </Link>
+        <Link to="/donors" className="link-btn"> The Lifesaver Board</Link>
       </div>
       </div>
     </div>
-  </div>
-</div>
+      </section>
+
+      
 
 
       {/* === Image Slider === */}
@@ -157,21 +152,67 @@ const Home = () => {
       </div>
 
       {/* === About Section === */}
-      <section id="about">
+      <div id="id">
+        <div id="aboutt">
+         <h4>About Us</h4>
+          
+          <p>We save lives through the power of blood donation.
+          Connecting donors with those in need, every drop counts.
+          Together, we build a healthier, caring community.
+          Because giving blood means giving life.</p>
+      
+          <div id="abouticon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+        </div>
+
+        <div id="vission">
+         <h4>Vission</h4>
+           
+          <p>Our vision is to create a world where no life is lost due to lack of blood.
+          We strive to inspire voluntary blood donation as a social responsibility.
+          By connecting hearts, we build a culture of compassion and care.
+          </p>
+          <div id="vissionicon">
+           <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+        <div id="mission">
+          <h4>Mission</h4>
+             
+          <p>Our mission is to promote safe and regular blood donation for all in need.
+          We aim to bridge the gap between donors and recipients with trust and care.
+          Through awareness and action, we empower communities to save lives.</p>
+          <div id="missionicon">
+           <i class="fa-solid fa-bullseye"></i>
+          </div>
+
+        </div>
+      </div>
+
+      {/* === Why Donate Section === */}
+      <div id="id1">
         <div>
-          <h1>About Us</h1>
+          <img src="./src/assets/OIP.webp" alt="donor" />
+        </div>
+        <div>
+          <h1>Why Donate Blood</h1>
+          <h4>Saves Lives & Supports Emergencies</h4>
           <p>
-            Blood 4 India is a non-profit online platform dedicated to
-            connecting voluntary blood donors with patients in urgent need
-            across India. Our mission is to bridge the gap between donors and
-            recipients, ensuring timely and life-saving blood donations. Join us
-            in saving lives—one donation at a time!
+            Every blood donation can save up to three lives. Blood is essential
+            for accident victims, surgeries, cancer treatments, and patients with
+            blood disorders like thalassemia. By donating, you become a lifesaver
+            for someone in critical need.
+          </p>
+          <h4>Promotes Your Own Health</h4>
+          <p>
+            Donating blood helps maintain healthy iron levels, reduces the risk of
+            heart disease, and stimulates the production of new blood cells. It’s
+            also a simple way to undergo a mini-health check-up, as your hemoglobin
+            and blood pressure are tested before donation.
           </p>
         </div>
-        <div>
-          <img src="./src/assets/mn-donor.jpg" alt="donor" />
-        </div>
-      </section>
+      </div>
 
       {/* === Why Donate Section === */}
       <section id="why-donate">

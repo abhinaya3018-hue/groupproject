@@ -1,6 +1,6 @@
 from rest_framework import viewsets, filters
-from .models import Donor, BloodRequest
-from .serializers import DonorSerializer, BloodRequestSerializer
+from .models import Donor, BloodRequest, DonorRequest
+from .serializers import DonorSerializer, BloodRequestSerializer, DonorRequestSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Donor
@@ -11,11 +11,13 @@ from django.contrib.auth import authenticate
 from django.db.models import Count
 
 from django.shortcuts import get_object_or_404
-from .models import Donor, Request
+from .models import Donor
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from rest_framework.response import Response
+
+
 
 
 
@@ -32,6 +34,12 @@ class BloodRequestViewSet(viewsets.ModelViewSet):
     serializer_class = BloodRequestSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['blood_group', 'city']
+
+class DonorRequestViewSet(viewsets.ModelViewSet):
+    queryset = DonorRequest.objects.all().order_by('-created_at')
+    serializer_class = DonorRequestSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['donor__name', 'name', 'email', 'phone']    
 
 @api_view(['GET'])
 def donor_group_counts(request):
@@ -82,14 +90,13 @@ def login_view(request):
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
 
 
-
 @csrf_exempt
 @api_view(['POST'])
 def send_request(request, id):
     """
     Send a request to a donor.
     """
-    donor = get_object_or_404(Donor, id=id)
+    donor = get_object_or_404(Donor, pk=id)
 
     name = request.data.get('name')
     phone = request.data.get('phone')
@@ -99,7 +106,7 @@ def send_request(request, id):
     if not name or not phone or not email:
         return Response({'detail': 'Name, phone, and email are required.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    req = Request.objects.create(
+    req = DonorRequest.objects.create(
         donor=donor,
         name=name,
         phone=phone,
