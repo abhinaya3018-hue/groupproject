@@ -132,27 +132,12 @@ const Home = () => {
     </div>
       </section>
 
-      
-
-
-      {/* === Image Slider === */}
-      <div className="slider d-flex justify-content-center align-items-center mt-5">
-        <div className="slider_row d-flex">
-          <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
-        </div>
-      </div>
+    
 
       {/* === About Section === */}
+
       <div id="id">
+        <section id="aboutt">
         <div id="aboutt">
          <h4>About Us</h4>
           
@@ -165,7 +150,8 @@ const Home = () => {
             <i className="fa-solid fa-users"></i>
           </div>
         </div>
-
+        </section>
+         <section id="vission">
         <div id="vission">
          <h4>Vission</h4>
            
@@ -177,6 +163,8 @@ const Home = () => {
            <i className="fa-solid fa-eye"></i>
           </div>
         </div>
+        </section>
+        <section id="mission">
         <div id="mission">
           <h4>Mission</h4>
              
@@ -186,8 +174,8 @@ const Home = () => {
           <div id="missionicon">
            <i className="fa-solid fa-bullseye"></i>
           </div>
-
         </div>
+        </section>
       </div>
 
       {/* === Why Donate Section === */}
@@ -213,27 +201,46 @@ const Home = () => {
           </p>
         </div>
       </div>
-
-      {/* === Why Donate Section === */}
-      <section id="why-donate">
-        <div>
-          <img src="./src/assets/OIP.webp" alt="donor" />
-        </div>
-        <div>
-          <h1>Why Donate Blood</h1>
-          <h4>Saves Lives & Supports Emergencies</h4>
-          <p>
-            Every blood donation can save up to three lives. Blood is essential
-            for accident victims, surgeries, cancer treatments, and patients
-            with blood disorders like thalassemia.
-          </p>
-          <h4>Promotes Your Own Health</h4>
-          <p>
-            Donating blood helps maintain healthy iron levels, reduces the risk
-            of heart disease, and stimulates the production of new blood cells.
-          </p>
-        </div>
+      {/* === Eligibility Section === */}
+      <section id="eligibility">
+      <div id="eligibility">
+        <h3>Blood Donors Eligibility</h3>
+        <p>You should not be suffering from any of the following diseases or taking medicines for them</p>
+        <ul>
+          <li># Age: 18-65 years</li>
+          <li># Weight: Minimum 50 kg</li>
+          <li># Health: Generally healthy and free from infections</li>
+          <li># Hemoglobin: At least 12.5 g/dL</li>
+          <li># Interval: At least 8 weeks between donations</li>
+          <li># Hepatitis B, C</li>
+          <li># AIDS # Diabetes (are you under medication currently?)</li>
+          <li># Fits/ Convulsions (are you under medication currently?)</li>
+          <li># Cancer # Leprosy or any other infectious diseases</li>
+          <li># Any allergies (Only if you are suffering from severe symptoms)</li>
+          <li># Hemophilia/ Bleeding problems</li>
+          <li># Small Pox Vaccination (within the last 3weeks)</li>
+          <li># Hemoglobin deficiency / Anemia (recently)</li>
+          <li># Blood Transfusion (within the last 6 months)</li>
+          <li># Chicken Pox (within 1 year)</li>
+        </ul>
+      </div>
       </section>
+
+      {/* === Image Slider === */}
+      <div className="slider d-flex justify-content-center align-items-center mt-5">
+        <div className="slider_row d-flex">
+          <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
+          <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
+        </div>
+      </div>
 
       {/* === Footer === */}
       <footer className="footer">

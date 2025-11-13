@@ -55,14 +55,16 @@ body{
   justify-self: center;
 }
 
-#id >div{
+#id >section{
   border: 1px solid whitesmoke;
   width: 260px;
   height: 310px;
   border-radius: 15px;
-  box-shadow: 5px 5px 5px 5px gray;
+  box-shadow: 5px 5px 5px 5px  gray;
   padding: 10px;
 }
+
+
 
 #aboutt h4{
   color: red;
@@ -144,14 +146,14 @@ body{
   position: relative;
   font-size: 25px;
   top: 10px;
-  left: 10px;
+  left: 8px;
 }
 #missionicon i{
   color: white;
   position: relative;
   font-size: 30px;
   top: 10px;
-  left: 10px;
+  left: 8px;
 }
 
 /* About Us & Why Donate Blood Sections */

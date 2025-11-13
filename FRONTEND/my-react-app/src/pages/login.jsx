@@ -54,12 +54,8 @@ export default function Login() {
     <div className="login-page">
       <div className="background-blur" />
       <div className="login-card" ref={cardRef}>
-<<<<<<< HEAD
-        <h2 className="titlelog" style={{color:'black'}}>Login</h2>
+        <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
 
-=======
-        <h2 className="title">Login</h2>
->>>>>>> 48f0817bcb8ac7240744511616d47f385ead392e
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
@@ -71,6 +67,7 @@ export default function Login() {
             />
             <label>Username</label>
           </div>
+
           <div className="form-group">
             <input
               type="password"
@@ -80,19 +77,25 @@ export default function Login() {
               required
             />
             <label>Password</label>
-            
           </div>
-<<<<<<< HEAD
-          <div className="options">
-        <label><input type="checkbox" /> Remember me</label>
-        <a href="#" className="forgot">Forgot password?</a>
-      </div>
 
-=======
->>>>>>> 48f0817bcb8ac7240744511616d47f385ead392e
+          <div className="options">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+            <a href="#" className="forgot">Forgot password?</a>
+          </div>
+
           {error && <p className="error">{error}</p>}
+
           <button type="submit" className="btn-login">Login</button>
-           <p className="signup">Don’t have an account? <a href="/signup"><i className="fa fa-address-card" id="sign"></i>Sign up</a></p>
+
+          <p className="signup">
+            Don’t have an account?{" "}
+            <a href="/signup">
+              <i className="fa fa-address-card" id="sign"></i> Sign up
+            </a>
+          </p>
         </form>
       </div>
     </div>

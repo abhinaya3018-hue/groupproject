@@ -101,7 +101,80 @@ const Homehero = () => {
         </div>
       </div>
 
-      {/* === Image Slider === */}
+     
+
+      {/* === About Section === */}
+      <div id="id">
+      <section id="aboutt">
+
+        <div id="aboutt">
+         <h4>About Us</h4>
+          
+          <p>We save lives through the power of blood donation.
+          Connecting donors with those in need, every drop counts.
+          Together, we build a healthier, caring community.
+          Because giving blood means giving life.</p>
+      
+          <div id="abouticon">
+            <i className="fa-solid fa-users"></i>
+          </div>
+        </div>
+        </section>
+
+        <section id="vision">
+        <div id="vission">
+         <h4>Vission</h4>
+           
+          <p>Our vision is to create a world where no life is lost due to lack of blood.
+          We strive to inspire voluntary blood donation as a social responsibility.
+          By connecting hearts, we build a culture of compassion and care.
+          </p>
+          <div id="vissionicon">
+           <i className="fa-solid fa-eye"></i>
+          </div>
+        </div>
+        </section>
+        <section id="mission">
+        <div id="mission">
+          <h4>Mission</h4>
+             
+          <p>Our mission is to promote safe and regular blood donation for all in need.
+          We aim to bridge the gap between donors and recipients with trust and care.
+          Through awareness and action, we empower communities to save lives.</p>
+          <div id="missionicon">
+           <i className="fa-solid fa-bullseye"></i>
+          </div>
+
+        </div>
+        </section>
+
+      </div>
+
+      {/* === Why Donate Section === */}
+      <div id="id1">
+        <div>
+          <img src="./src/assets/OIP.webp" alt="donor" />
+        </div>
+        <div>
+          <h1>Why Donate Blood</h1>
+          <h4>Saves Lives & Supports Emergencies</h4>
+          <p>
+            Every blood donation can save up to three lives. Blood is essential
+            for accident victims, surgeries, cancer treatments, and patients with
+            blood disorders like thalassemia. By donating, you become a lifesaver
+            for someone in critical need.
+          </p>
+          <h4>Promotes Your Own Health</h4>
+          <p>
+            Donating blood helps maintain healthy iron levels, reduces the risk of
+            heart disease, and stimulates the production of new blood cells. It’s
+            also a simple way to undergo a mini-health check-up, as your hemoglobin
+            and blood pressure are tested before donation.
+          </p>
+        </div>
+      </div>
+
+       {/* === Image Slider === */}
       <div className="slider d-flex justify-content-center align-items-center mt-5">
         <div className="slider_row d-flex">
           <div className="slider_column">
@@ -137,69 +210,6 @@ const Homehero = () => {
         </div>
       </div>
 
-      {/* === About Section === */}
-      <div id="id">
-        <div id="aboutt">
-         <h4>About Us</h4>
-          
-          <p>We save lives through the power of blood donation.
-          Connecting donors with those in need, every drop counts.
-          Together, we build a healthier, caring community.
-          Because giving blood means giving life.</p>
-      
-          <div id="abouticon">
-            <i className="fa-solid fa-users"></i>
-          </div>
-        </div>
-
-        <div id="vission">
-         <h4>Vission</h4>
-           
-          <p>Our vision is to create a world where no life is lost due to lack of blood.
-          We strive to inspire voluntary blood donation as a social responsibility.
-          By connecting hearts, we build a culture of compassion and care.
-          </p>
-          <div id="vissionicon">
-           <i className="fa-solid fa-eye"></i>
-          </div>
-        </div>
-        <div id="mission">
-          <h4>Mission</h4>
-             
-          <p>Our mission is to promote safe and regular blood donation for all in need.
-          We aim to bridge the gap between donors and recipients with trust and care.
-          Through awareness and action, we empower communities to save lives.</p>
-          <div id="missionicon">
-           <i className="fa-solid fa-bullseye"></i>
-          </div>
-
-        </div>
-      </div>
-
-      {/* === Why Donate Section === */}
-      <div id="id1">
-        <div>
-          <img src="./src/assets/OIP.webp" alt="donor" />
-        </div>
-        <div>
-          <h1>Why Donate Blood</h1>
-          <h4>Saves Lives & Supports Emergencies</h4>
-          <p>
-            Every blood donation can save up to three lives. Blood is essential
-            for accident victims, surgeries, cancer treatments, and patients with
-            blood disorders like thalassemia. By donating, you become a lifesaver
-            for someone in critical need.
-          </p>
-          <h4>Promotes Your Own Health</h4>
-          <p>
-            Donating blood helps maintain healthy iron levels, reduces the risk of
-            heart disease, and stimulates the production of new blood cells. It’s
-            also a simple way to undergo a mini-health check-up, as your hemoglobin
-            and blood pressure are tested before donation.
-          </p>
-        </div>
-      </div>
-
       {/* === Footer === */}
       <footer className="footer">
 
@@ -209,9 +219,9 @@ const Homehero = () => {
         <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
         </div>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Vission</a></li>
-          <li><a href="#">Mission</a></li>
+          <li><a href="#aboutt">About Us</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#mission">Mission</a></li>
         </ul>
         
         <p>© 2025 Red Connect | All Rights Reserved</p>
