@@ -162,7 +162,7 @@ const Home = () => {
           Because giving blood means giving life.</p>
       
           <div id="abouticon">
-            <i class="fa-solid fa-users"></i>
+            <i className="fa-solid fa-users"></i>
           </div>
         </div>
 
@@ -174,7 +174,7 @@ const Home = () => {
           By connecting hearts, we build a culture of compassion and care.
           </p>
           <div id="vissionicon">
-           <i class="fa-solid fa-eye"></i>
+           <i className="fa-solid fa-eye"></i>
           </div>
         </div>
         <div id="mission">
@@ -184,7 +184,7 @@ const Home = () => {
           We aim to bridge the gap between donors and recipients with trust and care.
           Through awareness and action, we empower communities to save lives.</p>
           <div id="missionicon">
-           <i class="fa-solid fa-bullseye"></i>
+           <i className="fa-solid fa-bullseye"></i>
           </div>
 
         </div>

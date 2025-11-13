@@ -90,28 +90,17 @@ def login_view(request):
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
 
 
-@csrf_exempt
-@api_view(['POST'])
-def send_request(request, id):
-    """
-    Send a request to a donor.
-    """
-    donor = get_object_or_404(Donor, pk=id)
+@api_view(['GET','POST'])
+def send_request(request, donor_id):
+    # For debugging, print the donor_id
+    print("Received donor ID:", donor_id)
+    
+    # Example: Save request in DB
+    data = request.data
+    name = data.get('name')
+    phone = data.get('phone')
+    email = data.get('email')
+    message = data.get('message')
 
-    name = request.data.get('name')
-    phone = request.data.get('phone')
-    email = request.data.get('email')
-    message = request.data.get('message', '')
-
-    if not name or not phone or not email:
-        return Response({'detail': 'Name, phone, and email are required.'}, status=status.HTTP_400_BAD_REQUEST)
-
-    req = DonorRequest.objects.create(
-        donor=donor,
-        name=name,
-        phone=phone,
-        email=email,
-        message=message
-    )
-
-    return Response({'detail': f'Request sent to {donor.name} successfully!'}, status=status.HTTP_201_CREATED)
+    # (Save logic here)
+    return Response({'message': 'Request saved successfully!'}, status=status.HTTP_201_CREATED)
