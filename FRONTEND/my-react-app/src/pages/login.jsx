@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
@@ -11,7 +11,6 @@ export default function Login() {
 
   useEffect(() => {
     const card = cardRef.current;
-
     const handleMouseMove = (e) => {
       const { left, top, width, height } = card.getBoundingClientRect();
       const x = (e.clientX - left) / width;
@@ -20,11 +19,9 @@ export default function Login() {
       const rotateY = (x - 0.5) * -10;
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
-
     const resetTilt = () => {
       card.style.transform = "rotateX(0) rotateY(0)";
     };
-
     card.addEventListener("mousemove", handleMouseMove);
     card.addEventListener("mouseleave", resetTilt);
     return () => {
@@ -57,8 +54,12 @@ export default function Login() {
     <div className="login-page">
       <div className="background-blur" />
       <div className="login-card" ref={cardRef}>
+<<<<<<< HEAD
         <h2 className="titlelog" style={{color:'black'}}>Login</h2>
 
+=======
+        <h2 className="title">Login</h2>
+>>>>>>> 48f0817bcb8ac7240744511616d47f385ead392e
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
@@ -70,7 +71,6 @@ export default function Login() {
             />
             <label>Username</label>
           </div>
-
           <div className="form-group">
             <input
               type="password"
@@ -82,13 +82,15 @@ export default function Login() {
             <label>Password</label>
             
           </div>
+<<<<<<< HEAD
           <div className="options">
         <label><input type="checkbox" /> Remember me</label>
         <a href="#" className="forgot">Forgot password?</a>
       </div>
 
+=======
+>>>>>>> 48f0817bcb8ac7240744511616d47f385ead392e
           {error && <p className="error">{error}</p>}
-
           <button type="submit" className="btn-login">Login</button>
            <p className="signup">Don’t have an account? <a href="/signup"><i className="fa fa-address-card" id="sign"></i>Sign up</a></p>
         </form>

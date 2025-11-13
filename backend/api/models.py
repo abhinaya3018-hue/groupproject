@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 BLOOD_GROUPS = [
     ('A+', 'A+'), ('A-', 'A-'), ('B+', 'B+'), ('B-', 'B-'),
     ('AB+', 'AB+'), ('AB-', 'AB-'), ('O+', 'O+'), ('O-', 'O-'),
@@ -34,13 +35,13 @@ class BloodRequest(models.Model):
         return f"Request: {self.blood_group} in {self.city}"
 
 
-class Request(models.Model):
-    donor = models.ForeignKey('Donor', on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=15)
+class DonorRequest(models.Model):
+    donor = models.ForeignKey(Donor, on_delete=models.CASCADE)
+    name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=10)
     email = models.EmailField()
     message = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
-        return f"Request by {self.name} for {self.donor.name}"
+        return f"Request to {self.donor.name} by {self.name}"

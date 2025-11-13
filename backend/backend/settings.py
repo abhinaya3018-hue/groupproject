@@ -40,13 +40,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',       # ✅ Add this line
     'api',  
-    'notifications',  
     'channels',       
 ]
 
 # point to your ASGI application (create this file next)
 
-
+APPEND_SLASH=True
 ASGI_APPLICATION = "backend.asgi.application"
 
 # Recommended: use Redis in dev/prod
@@ -55,7 +54,9 @@ CHANNEL_LAYERS = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True 
-CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:5173"]  
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # ✅ Must be at the very top
@@ -71,6 +72,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+APPEND_SLASH = True
 
 
 

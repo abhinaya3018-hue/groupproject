@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "./homehero.css";
 import { Link } from "react-router-dom"; // ✅ import Link if you use it in footer
 
+
 const Homehero = () => {
   const canvasRef = useRef(null);
 
@@ -92,11 +93,10 @@ const Homehero = () => {
       {/* === Hero Section === */}
       <div className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div className="title">
+        <div  className="title1">
           <h1>RED CONNECT</h1>
           <h3>
-            “Supplying vital blood components for patients with illness, trauma,
-            surgery, or cancer care.”
+            Every donor is a hero without a cape
           </h3>
         </div>
       </div>
@@ -139,19 +139,40 @@ const Homehero = () => {
 
       {/* === About Section === */}
       <div id="id">
-        <div>
-          <h1>About Us</h1>
-          <p>
-            Blood 4 India is a non-profit online platform dedicated to connecting
-            voluntary blood donors with patients in urgent need across India. Our
-            mission is to bridge the gap between donors and recipients, ensuring
-            timely and life-saving blood donations. With a strong commitment to
-            compassion and community service, we strive to make blood availability
-            seamless and accessible. Join us in saving lives—one donation at a time!
-          </p>
+        <div id="aboutt">
+         <h4>About Us</h4>
+          
+          <p>We save lives through the power of blood donation.
+          Connecting donors with those in need, every drop counts.
+          Together, we build a healthier, caring community.
+          Because giving blood means giving life.</p>
+      
+          <div id="abouticon">
+            <i className="fa-solid fa-users"></i>
+          </div>
         </div>
-        <div>
-          <img src="./src/assets/mn-donor.jpg" alt="donor" />
+
+        <div id="vission">
+         <h4>Vission</h4>
+           
+          <p>Our vision is to create a world where no life is lost due to lack of blood.
+          We strive to inspire voluntary blood donation as a social responsibility.
+          By connecting hearts, we build a culture of compassion and care.
+          </p>
+          <div id="vissionicon">
+           <i className="fa-solid fa-eye"></i>
+          </div>
+        </div>
+        <div id="mission">
+          <h4>Mission</h4>
+             
+          <p>Our mission is to promote safe and regular blood donation for all in need.
+          We aim to bridge the gap between donors and recipients with trust and care.
+          Through awareness and action, we empower communities to save lives.</p>
+          <div id="missionicon">
+           <i className="fa-solid fa-bullseye"></i>
+          </div>
+
         </div>
       </div>
 
@@ -187,6 +208,11 @@ const Homehero = () => {
         <h3 id="he1">RED CONNECT</h3>
         <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
         </div>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Vission</a></li>
+          <li><a href="#">Mission</a></li>
+        </ul>
         
         <p>© 2025 Red Connect | All Rights Reserved</p>
         <p>Made with ❤️ to support life-saving blood donations.</p>
