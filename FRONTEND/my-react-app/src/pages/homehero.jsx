@@ -220,7 +220,7 @@ const Homehero = () => {
         </div>
         <ul>
           <li><a href="#aboutt">About Us</a></li>
-          <li><a href="#vision">Vision</a></li>
+          <li><a href="#vission">Vission</a></li>
           <li><a href="#mission">Mission</a></li>
         </ul>
         

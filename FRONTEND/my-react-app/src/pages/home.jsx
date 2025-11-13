@@ -131,9 +131,9 @@ const Home = () => {
     
 
       {/* === About Section === */}
-
+      <section id="aboutt">
       <div id="id">
-        <section id="aboutt">
+       
         <div id="aboutt">
          <h4>About Us</h4>
           
@@ -146,8 +146,8 @@ const Home = () => {
             <i className="fa-solid fa-users"></i>
           </div>
         </div>
-        </section>
-         <section id="vission">
+        
+         
         <div id="vission">
          <h4>Vission</h4>
            
@@ -159,8 +159,7 @@ const Home = () => {
            <i className="fa-solid fa-eye"></i>
           </div>
         </div>
-        </section>
-        <section id="mission">
+        
         <div id="mission">
           <h4>Mission</h4>
              
@@ -171,8 +170,9 @@ const Home = () => {
            <i className="fa-solid fa-bullseye"></i>
           </div>
         </div>
-        </section>
+        
       </div>
+      </section>
 
       {/* === Why Donate Section === */}
       <div id="id1">
