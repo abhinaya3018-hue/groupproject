@@ -53,18 +53,13 @@ export default function Login() {
   return (
     <div className="login-page">
       <a id="backbut" href="/homehero">
-      <i className="fa-solid fa-angles-left"></i></a>
+        <i className="fa-solid fa-angles-left"></i>
+      </a>
       <div className="background-blur" />
-<<<<<<< Updated upstream
-      <div className="login-card" ref={cardRef}>          
-      <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
 
-=======
       <div className="login-card" ref={cardRef}>
+        <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
 
-        <h2 className="titlelog" style={{color:'black'}}>Login</h2>
-        <h2 className="title">Login</h2>
->>>>>>> Stashed changes
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
@@ -87,30 +82,19 @@ export default function Login() {
             />
             <label>Password</label>
           </div>
-<<<<<<< Updated upstream
 
           <div className="options">
-            <label>
-              <input type="checkbox" /> Remember me
-            </label>
+            <label><input type="checkbox" /> Remember me</label>
             <a href="#" className="forgot">Forgot password?</a>
           </div>
 
-=======
-          <div className="options">
-        <label><input type="checkbox" /> Remember me</label>
-        <a href="#" className="forgot">Forgot password?</a>
-      </div>
->>>>>>> Stashed changes
           {error && <p className="error">{error}</p>}
 
           <button type="submit" className="btn-login">Login</button>
 
           <p className="signup">
             Don’t have an account?{" "}
-            <a href="/signup">
-              Sign up
-            </a>
+            <a href="/signup">Sign up</a>
           </p>
         </form>
       </div>
