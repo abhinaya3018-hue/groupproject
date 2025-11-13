@@ -57,7 +57,7 @@ export default function Login() {
     <div className="login-page">
       <div className="background-blur" />
       <div className="login-card" ref={cardRef}>
-        <h2 className="title">Login</h2>
+        <h2 className="titlelog" style={{color:'black'}}>Login</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -80,11 +80,17 @@ export default function Login() {
               required
             />
             <label>Password</label>
+            
           </div>
+          <div className="options">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="#" className="forgot">Forgot password?</a>
+      </div>
 
           {error && <p className="error">{error}</p>}
 
           <button type="submit" className="btn-login">Login</button>
+           <p className="signup">Don’t have an account? <a href="/signup"><i className="fa fa-address-card" id="sign"></i>Sign up</a></p>
         </form>
       </div>
     </div>

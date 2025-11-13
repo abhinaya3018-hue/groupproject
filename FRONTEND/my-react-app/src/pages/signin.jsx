@@ -38,55 +38,54 @@ const Signup = () => {
   };
 
   return (
-    <div id="signup-bg" className="d-flex justify-content-center align-items-center vh-100">
-      <div className="card signup-card p-4 shadow-lg" id="sing">
-        <h3 className="text-center mb-1 text-danger fw-bold sing"  >Create an Account</h3>
+    <div className="login-page1">
+      <div>
+        <h2 className="titlelog2">
+          <i id="sign" className="fa fa-user-plus"></i> Create an Account
+        </h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-2 fire">
-            <label className="form-label fw-semibold">Username</label>
+          <div className="form-group1">
             <input
               type="text"
-              className="form-control"
               name="username"
               value={formData.username}
               onChange={handleChange}
-              placeholder="Enter username"
               required
             />
+            <label>Username</label>
           </div>
 
-          <div className="mb-2 fire">
-            <label className="form-label fw-semibold">Email</label>
+          <div className="form-group1">
             <input
               type="email"
-              className="form-control"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter email"
               required
             />
+            <label>Email</label>
           </div>
 
-          <div className="mb-2 fire-box">
-            <label className="form-label fw-semibold">Password</label>
+          <div className="form-group1">
             <input
               type="password"
-              className="form-control"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter password"
               required
             />
+            <label>Password</label>
           </div>
 
-          {error && <p className="text-danger text-center fw-semibold">{error}</p>}
+          {error && <p className="error">{error}</p>}
 
-          <button type="submit" className="btn btn-danger w-100 mt-2">
-            Sign Up
-          </button>
+          <button type="submit" className="btn-signin">Sign Up</button>
+
+          <p className="signup">
+            Already have an account?
+            <a href="/login"><i className="fa fa-sign-in"></i> Login</a>
+          </p>
         </form>
       </div>
     </div>

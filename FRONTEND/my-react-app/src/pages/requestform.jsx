@@ -63,93 +63,98 @@ export default function RequestForm() {
 };
 
 
+return (
+  <div className="register-section1">
+    <h2>Blood Request Form</h2>
 
+    {success && (
+      <div className="form-msg1" style={{ color: "green" }}>
+        Request sent successfully!
+      </div>
+    )}
+    {error && (
+      <div className="form-msg1" style={{ color: "red" }}>
+        {error}
+      </div>
+    )}
 
-  return (
-    <div className="request-form-container">
-      <h3 className="text-danger text-center fw-bold mb-4">
-        Blood Request Form
-      </h3>
+    <form onSubmit={handleSubmit} className="grid-form1">
+      
+      <div className="form-item1">
+        <label>Donor Name</label>
+        <input
+          type="text"
+          value={donor.name || ""}
+          readOnly
+          placeholder="Donor name"
+        />
+      </div>
 
-      {success && (
-        <div className="alert alert-success text-center">
-          Request sent successfully!
-        </div>
-      )}
-      {error && <div className="alert alert-danger text-center">{error}</div>}
+     
+      <div className="form-item1">
+        <label>Blood Group</label>
+        <input
+          type="text"
+          value={donor.blood_group || ""}
+          readOnly
+          placeholder="Blood group"
+        />
+      </div>
 
-      <form onSubmit={handleSubmit} className="request-form shadow p-4 rounded">
-        <div className="mb-3">
-          <label>Donor Name</label>
-          <input
-            type="text"
-            value={donor.name || ""}
-            readOnly
-            className="form-control"
-          />
-        </div>
+      
+      <div className="form-item1">
+        <label>Your Name</label>
+        <input
+          type="text"
+          name="name"
+          onChange={handleChange}
+          placeholder="Enter your name"
+          required
+        />
+      </div>
 
-        <div className="mb-3">
-          <label>Blood Group</label>
-          <input
-            type="text"
-            value={donor.blood_group || ""}
-            readOnly
-            className="form-control"
-          />
-        </div>
+      
+      <div className="form-item1">
+        <label>Your Phone Number</label>
+        <input
+          type="tel"
+          name="phone"
+          onChange={handleChange}
+          placeholder="Enter your phone"
+          required
+        />
+      </div>
 
-        <div className="mb-3">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
+      
+      <div className="form-item1">
+        <label>Your Email</label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          placeholder="Enter your email"
+          required
+        />
+      </div>
 
-        <div className="mb-3">
-          <label>Your Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
+      
+      <div className="form-item1">
+        <label>Message</label>
+        <textarea
+          name="message"
+          onChange={handleChange}
+          placeholder="Enter reason or urgency..."
+          rows="3"
+        ></textarea>
+      </div>
 
-        <div className="mb-3">
-          <label>Your Email</label>
-          <input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            required
-            className="form-control"
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>Message</label>
-          <textarea
-            name="message"
-            onChange={handleChange}
-            className="form-control"
-            placeholder="Enter reason or urgency..."
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="btn btn-danger w-100 fw-bold"
-          disabled={loading}
-        >
+      {/* Submit Button */}
+      <div className="form-btn1">
+        <button type="submit" disabled={loading}>
           {loading ? "Sending..." : "Send Request"}
         </button>
-      </form>
-    </div>
-  );
+      </div>
+    </form>
+  </div>
+);
 }

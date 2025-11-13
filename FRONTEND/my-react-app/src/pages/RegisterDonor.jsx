@@ -11,6 +11,7 @@ export default function RegisterDonor() {
     city: "",
     age: "",
   });
+
   const [msg, setMsg] = useState("");
 
   const handleChange = (e) => {
@@ -35,64 +36,91 @@ export default function RegisterDonor() {
   };
 
   return (
-    <div className="container my-5" id="reg">
-      <div className="card shadow-lg p-4 mx-auto">
-        <div className="row g-0 align-items-center">
-          {/* Left side — Form */}
-          <div className="col-md-6 p-4">
-            <h3 className="text-center text-danger mb-4">Register as Donor</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label className="form-label fw-bold">Name</label>
-                <input type="text" className="form-control" name="name" value={form.name} onChange={handleChange} placeholder="Enter full name" required />
-              </div>
-              <div className="mb-3">
-                <label className="form-label fw-bold">Email</label>
-                <input type="email" className="form-control" name="email" value={form.email} onChange={handleChange} placeholder="Enter email" required/> </div>
+    <div className="register-section">
+      <h2>Register as Donor</h2>
 
-              <div className="mb-3">
-                <label className="form-label fw-bold">Phone Number</label>
-                <input type="tel" className="form-control" name="phone" value={form.phone} onChange={handleChange} placeholder="Enter phone number"required/> </div>
-
-              <div className="mb-3">
-                <label className="form-label fw-bold">Blood Group</label>
-                <select className="form-select" name="blood_group" value={form.blood_group} onChange={handleChange}>
-                  {["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"].map(
-                    (bg) => (
-                      <option key={bg} value={bg}>
-                        {bg}</option>
-                       ) )}</select> </div>
-              <div className="mb-3">
-                <label className="form-label fw-bold">Age</label>
-                <input type="number" className="form-control" name="age" value={form.age} onChange={handleChange} placeholder="Enter age" required/></div>
-
-              <div className="mb-3">
-                <label className="form-label fw-bold">Address</label>
-                <input type="text" className="form-control" name="city" value={form.city} onChange={handleChange} placeholder="Enter address" required /> </div>
-              <div className="d-grid">
-                <button type="submit" className="btn btn-danger"> Register</button>
-              </div>
-            </form>
-
-            {msg && (<div className="alert mt-3 text-center fw-semibold alert-info">{msg}</div>)}
-          </div>
-          <div className="col-md-6 p-3" id="img-card">
-            <div id="donorCarousel" className="carousel slide" data-bs-ride="carousel">
-              <div className="carousel-inner rounded-4 shadow-sm">
-                <div className="carousel-item active">
-                  <img src="./src/assets/slider1.avif" className="d-block " alt="Donate Blood"/></div>
-                <div className="carousel-item">
-                  <img src="./src/assets/sliter2.webp" className="d-block "alt="Save Lives"/></div>
-                <div className="carousel-item">
-                  <img src="./src/assets/slider3.webp" className="d-block"alt="Blood Donation Camp"/></div>
-              </div>
-
-              <button className="carousel-control-prev" type="button" data-bs-target="#donorCarousel" data-bs-slide="prev"><span className="carousel-control-prev-icon bg-dark" ></span></button>
-              <button className="carousel-control-next"type="button"data-bs-target="#donorCarousel" data-bs-slide="next"><span className="carousel-control-next-icon bg-dark"></span></button>
-            </div>
-          </div>
+      <form onSubmit={handleSubmit} className="grid-form">
+        <div className="form-item">
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Enter your name"
+            required
+          />
         </div>
-      </div>
+
+        <div className="form-item">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div className="form-item">
+          <label>Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+
+        <div className="form-item">
+          <label>Blood Group</label>
+          <select
+            name="blood_group"
+            value={form.blood_group}
+            onChange={handleChange}
+          >
+            {["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"].map((bg) => (
+              <option key={bg} value={bg}>
+                {bg}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-item">
+          <label>Age</label>
+          <input
+            type="number"
+            name="age"
+            value={form.age}
+            onChange={handleChange}
+            placeholder="Enter age"
+            required
+          />
+        </div>
+
+        <div className="form-item">
+          <label>Address</label>
+          <input
+            type="text"
+            name="city"
+            value={form.city}
+            onChange={handleChange}
+            placeholder="Enter your address"
+            required
+          />
+        </div>
+
+        <div className="form-btn">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+
+      {msg && <p className="form-msg">{msg}</p>}
     </div>
   );
 }
