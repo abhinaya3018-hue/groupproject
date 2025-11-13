@@ -39,6 +39,8 @@ const Signup = () => {
 
   return (
     <div className="login-page1">
+       <a id="backbut" href="/login">
+      <i className="fa-solid fa-angles-left"></i></a>
       <div>
         <h2 className="titlelog2">
           <i id="sign" className="fa fa-user-plus"></i> Create an Account

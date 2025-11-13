@@ -52,9 +52,11 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <a id="backbut" href="/homehero">
+      <i className="fa-solid fa-angles-left"></i></a>
       <div className="background-blur" />
-      <div className="login-card" ref={cardRef}>
-        <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
+      <div className="login-card" ref={cardRef}>          
+      <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -93,7 +95,7 @@ export default function Login() {
           <p className="signup">
             Don’t have an account?{" "}
             <a href="/signup">
-              <i className="fa fa-address-card" id="sign"></i> Sign up
+              Sign up
             </a>
           </p>
         </form>

@@ -45,7 +45,7 @@ const handleRequest = (donor) => {
     <div className="donor-container">
       <div className="back-wrapper">
         <Link to="/home" className="back-link">
-          <i className="fa-solid fa-angles-left"></i> Back
+          <i id="backbut2" className="fa-solid fa-angles-left"></i>
         </Link>
       </div>
 

@@ -37,6 +37,8 @@ export default function RegisterDonor() {
 
   return (
     <div className="register-section">
+       <a id="backbut1" href="/home">
+      <i className="fa-solid fa-angles-left"></i></a>
       <h2>Register as Donor</h2>
 
       <form onSubmit={handleSubmit} className="grid-form">

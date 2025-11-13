@@ -1,9 +1,9 @@
 .register-section {
   width: 80%;
   max-width: 900px;
-  margin-top: 10%;
+  margin-top: 8%;
   margin-left: 18%;
-  padding: 30px;
+  padding: 15px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -11,17 +11,27 @@
   opacity: 0;
   animation: fadeSlideIn 1.2s ease forwards;
 }
-
+#backbut1{
+  position: relative;
+  right: 35%;
+  bottom: 23px;
+  font-size: 25px;
+  color: black;
+}
+#backbut1 :hover{
+color: red;
+}
 
 .register-section h2 {
   text-align: center;
   color: #d32f2f;
   font-size: 26px;
-  margin-bottom: 30px;
   letter-spacing: 1px;
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeDown 1s ease forwards 0.3s;
+  position: relative;
+  bottom: 30px;
 }
 
 

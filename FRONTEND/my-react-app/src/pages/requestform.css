@@ -1,9 +1,9 @@
 .register-section1 {
   width: 80%;
   max-width: 900px;
-  margin-top: 10%;
+  margin-top: 8%;
   margin-left: 18%;
-  padding: 30px;
+  padding: 15px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -12,15 +12,23 @@
   animation: fadeSlideIn1 1.2s ease forwards;
 }
 
+#backbut3{
+  position: relative;
+  right: 35%;
+  font-size: 25px;
+  color: black;
+  bottom: 25px;
+}
 .register-section1 h2 {
   text-align: center;
   color: #d32f2f;
   font-size: 26px;
-  margin-bottom: 30px;
   letter-spacing: 1px;
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeDown1 1s ease forwards 0.3s;
+  position: relative;
+  bottom: 25px;
 }
 
 .grid-form1 {
@@ -88,8 +96,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
-  margin-left: 35%;
+  margin-top: 5px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(214, 40, 40, 0.3);
   opacity: 0;

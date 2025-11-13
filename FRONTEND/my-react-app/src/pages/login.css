@@ -8,6 +8,15 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+#backbut{
+  position: relative;
+  bottom: 33%;
+  right: 32%;
+  color: #070707;
+  font-size: 25px;
+}
+
+
 /* Title */
 .titlelog {
   text-align: left;
@@ -114,21 +123,22 @@
 #sign {
   color: #d62828;
   margin-right: 10px;
-  font-size: 28px;
+  
 }
 
 /* Signup section */
 .signup {
-  font-size: 20px;
   color: #333;
   margin-top: 20px;
+  font-size: 15px;
   animation: fadeIn 1s ease forwards 1.5s;
+  margin-left: 13%;
 }
 
 .signup a {
   color: #d62828;
   text-decoration: none;
-  font-weight: 600;
+  font-size: 18px;
   margin-left: 10px;
   transition: color 0.3s ease;
 }

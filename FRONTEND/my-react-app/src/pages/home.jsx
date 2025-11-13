@@ -109,28 +109,24 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* === Hero Section === */}
-      <section className="blood-animation-container">
-        <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div className="title2">
-          <h1>RED CONNECT</h1>
-          <h3>
-           Every donor is a hero without a cape
-          </h3>
-        </div>
+<section className="blood-animation-container">
+  <canvas ref={canvasRef} id="bloodCanvas"></canvas>
+  <div className="title2">
+    <h1>RED CONNECT</h1>
+    <h3>Every donor is a hero without a cape</h3>
+  </div>
 
-
-      
-    <div id="registerbox" className="register-box">
-      <div id="donorbox" className="donor-box">
-        <Link to="/register" className="link-btn">Register as Donor</Link>
-      </div>
-      <div>
-      <div id="donorlistbox">
-        <Link to="/donors" className="link-btn"> The Lifesaver Board</Link>
-      </div>
-      </div>
+  <div id="registerbox" className="register-box">
+    <div id="donorbox" className="donor-box">
+      <Link to="/register" className="link-btn">Register as Donor</Link>
     </div>
-      </section>
+
+    <div id="donorlistbox" className="donor-list-box">
+      <Link to="/donors" className="link-btn">The Lifesaver Board</Link>
+    </div>
+  </div>
+</section>
+
 
     
 

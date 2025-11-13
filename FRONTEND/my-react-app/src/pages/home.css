@@ -15,16 +15,20 @@
   overflow: hidden;
 }
 
+/* Canvas should be behind everything and not intercept clicks */
 #bloodCanvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 0;              /* 👈 keep it behind */
+  pointer-events: none;    /* 👈 allows clicks to pass through */
 }
 
 .title2 {
   position: relative;
-  z-index: 4;
+  z-index: 3;
   color: white;
   top: 45%;
   transform: translateY(-40%);
@@ -42,31 +46,30 @@
   position: relative;
   bottom: 150px;
   left: 7.5%;
-
-  
 }
 
 .title2 h3 {
-  font-size: 1.2rem;
+  font-size: 1.7em;
   opacity: 0;
   animation: fadeInText 3s ease 1s forwards;
   position: relative;
-  bottom: 120px;
-  right: 25%;
+  bottom: 150px;
+  left: 7.5%;
   color: white;
 }
-
 
 /* === REGISTER SECTION === */
 .register-box {
   position: relative;
   left: 60%;
   width: 300px;
-  top: 20px;
+  bottom: 50px;
   animation: fadeUp 2.2s ease forwards;
+  z-index: 4; /* 👈 ensure it's above title & canvas */
 }
 
-#donorlistbox {
+#donorlistbox,
+.donor-box {
   background: rgba(255, 255, 255, 0.15);
   padding: 35px 40px;
   border-radius: 15px;
@@ -75,16 +78,12 @@
   animation: heartBeat 2.8s infinite ease-in-out;
   margin-top: 30px;
   justify-self: center;
-  
+  z-index: 4;
 }
 
-.donor-box {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 35px 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
-  backdrop-filter: blur(12px);
-  animation: heartBeat 2.8s infinite ease-in-out;
+/* Donor-box should not overlap list box */
+#donorlistbox {
+  margin-top: 30px;
 }
 
 .link-btn {
@@ -96,13 +95,20 @@
   font-weight: bold;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-
+  display: inline-block;
+  z-index: 5;
+  position: relative; /* ensures stacking context for z-index */
 }
 
 .link-btn:hover {
   background: linear-gradient(90deg, #ff6f83, #ffa8a8);
   transform: translateY(-3px) scale(1.08);
 }
+
+
+
+
+
 
 
 
