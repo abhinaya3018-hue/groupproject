@@ -14,6 +14,7 @@ import RequestForm from './pages/requestform';
 import ReviewForm from './pages/ReviewForm';
 import DashboardReviews from './pages/DashboardReviews';
 import Footer from './components/footer';
+import BloodFlowAnimation from './pages/BloodFlowAnimation';
 
 function App() {
   // ✅ Call the hook so that WebSocket stays active globally
@@ -37,8 +38,7 @@ function App() {
           <Route path="/request/:id" element={<RequestForm />} />
           <Route path="/review" element={<ReviewForm />} />
           <Route path="/dashboard" element={<DashboardReviews />} />
-          
-        
+          <Route path="/bloodflow" element={<BloodFlowAnimation />} />
         </Routes> 
         <Footer />
       </BrowserRouter>

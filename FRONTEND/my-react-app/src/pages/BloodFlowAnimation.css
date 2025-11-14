@@ -1,0 +1,135 @@
+/* Layout */
+.blood-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+  font-family: Poppins, sans-serif;
+  margin-top: 6%;
+}
+
+/* Donor Blood Bags */
+.donor-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.donor-bag {
+  width: 80px;
+  height: 80px;
+  background: #e33636;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: 0.35s ease;
+  box-shadow: 0 0 10px rgba(255,0,0,0.4);
+  overflow: hidden;
+}
+
+.donor-bag::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  background: linear-gradient(#ff1c1c, #b30000);
+  transition: height 1.2s ease;
+}
+
+.bag-selected::after {
+  height: 0%; /* bag drains */
+}
+
+.bag-faded {
+  opacity: 0.3;
+  transform: scale(0.9);
+}
+
+.bag-label {
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Recipients */
+.recipient-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.recipient-circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 600;
+  transition: 0.35s ease;
+}
+
+.recipient-allowed {
+  background: #4caf50;
+  color: white;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(76,175,80,0.7);
+}
+
+.recipient-blocked {
+  opacity: 0.25;
+  transform: scale(0.85);
+}
+
+/* Flow SVG */
+.flow-area {
+  width: 400px;
+  height: 400px;
+}
+
+.flow-path {
+  fill: none;
+  /* stroke: #bdbdbd; */
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  transition: stroke 0.3s;
+}
+
+/* Activated Flow Line */
+.active-path {
+  stroke: #ff1c1c;
+  animation: flowLine 2.2s forwards ease-in-out;
+}
+
+/* Moving blood drop */
+.active-path::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #ff1c1c;
+  border-radius: 50%;
+  position: absolute;
+  animation: dropMove 2.2s linear forwards;
+}
+
+/* Line draw animation */
+@keyframes flowLine {
+  from { stroke-dashoffset: 350; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Drop moves along the line (CSS motion path) */
+@keyframes dropMove {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}

@@ -84,7 +84,7 @@ export default function DonorList() {
           <select
             value={selectedGroup}
             onChange={(e) => setSelectedGroup(e.target.value)}
-            className="filter-select"
+            className="filter-select1"
           >
             <option value="All">All</option>
             <option value="A+">A+</option>
