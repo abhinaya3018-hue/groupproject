@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <div className="login-page">
       <a id="backbut" href="/homehero">
-        <i className="fa-solid fa-angles-left"></i>
+        <i className="fa-solid fa-angles-left" id="back"></i>
       </a>
       <div className="background-blur" />
 

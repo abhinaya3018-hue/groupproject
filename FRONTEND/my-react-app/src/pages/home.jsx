@@ -245,11 +245,12 @@ const Home = () => {
         <h3 id="he1">RED CONNECT</h3>
         <p id="pg1">The Red Connect is a voluntary organization with over 1200 branches</p>
         </div>
-        <div></div>
-        <p>© 2025 Red Connect | All Rights Reserved</p>
-        <p>
+        <div>
+        <p className="fin">© 2025 Red Connect | All Rights Reserved</p>
+        <p className="fin">
           Made with  to support life-saving blood donations.
         </p>
+        </div>
         <div className="footer-links">
           <Link to="/donors">View Donors</Link>
           <span> | </span>

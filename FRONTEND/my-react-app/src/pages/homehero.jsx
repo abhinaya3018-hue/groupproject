@@ -224,8 +224,8 @@ const Homehero = () => {
           <li><a href="#mission">Mission</a></li>
         </ul>
         
-        <p>© 2025 Red Connect | All Rights Reserved</p>
-        <p>Made with ❤️ to support life-saving blood donations.</p>
+        <p className="foot">© 2025 Red Connect | All Rights Reserved</p>
+        <p className="foot">Made with ❤️ to support life-saving blood donations.</p>
         <div className="footer-links">
           <Link to="/register">Become a Donor</Link>
           <span> | </span>
