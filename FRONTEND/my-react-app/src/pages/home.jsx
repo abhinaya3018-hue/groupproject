@@ -238,6 +238,31 @@ const Home = () => {
           <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+      {/* === Footer === */}
+      <footer className="footer">
+        <div id="fimg">
+        <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
+        <h3 id="he1">RED CONNECT</h3>
+        <p id="pg1">The Red Connect is a voluntary organization with over 1200 branches</p>
+        </div>
+        <div>
+        <p className="fin">© 2025 Red Connect | All Rights Reserved</p>
+        <p className="fin">
+          Made with  to support life-saving blood donations.
+        </p>
+        </div>
+        <div className="footer-links">
+          <Link to="/donors">View Donors</Link>
+          <span> | </span>
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        </div>
+      </footer>
+>>>>>>> 81fde535e595dbf8e30bb0b1cdd66945fb19081c
     </div>
   );
 };

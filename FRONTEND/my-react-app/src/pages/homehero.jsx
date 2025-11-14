@@ -234,6 +234,32 @@ const Homehero = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+      {/* === Footer === */}
+      <footer className="footer">
+
+         <div id="fimg">
+        <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
+        <h3 id="he1">RED CONNECT</h3>
+        <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
+        </div>
+        <ul>
+          <li><a href="#aboutt">About Us</a></li>
+          <li><a href="#vission">Vission</a></li>
+          <li><a href="#mission">Mission</a></li>
+        </ul>
+        
+        <p className="foot">© 2025 Red Connect | All Rights Reserved</p>
+        <p className="foot">Made with ❤️ to support life-saving blood donations.</p>
+        <div className="footer-links">
+          <Link to="/register">Become a Donor</Link>
+          <span> | </span>
+          <Link to="/donors">View Donors</Link>
+        </div>
+      </footer>
+>>>>>>> 81fde535e595dbf8e30bb0b1cdd66945fb19081c
     </>
   );
 };

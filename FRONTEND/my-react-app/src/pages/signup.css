@@ -138,30 +138,12 @@
   text-decoration: underline;
 }
 
-/* Forgot password */
+
 .forgot {
   margin: 80px;
   color: red;
 }
 
-/* Media */
-@media (max-width: 450px) {
-  .login-page {
-    padding: 10px;
-    margin-top: 20px;
-  }
-
-  .logo h1 {
-    font-size: 15px;
-    margin-left: 20px;
-  }
-
-  .forgot {
-    margin-right: 10px;
-  }
-}
-
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -178,3 +160,59 @@
   }
 }
 
+@media (max-width: 768px){
+#backbut1{
+    position: relative;
+    left: 2px;
+    bottom: 180px;
+  }
+  .titlelog2{
+    justify-self: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top:100px;
+  }
+  .form-group1{
+    position: relative;
+    top: 20px;
+    right: 20px;
+  }
+  .btn-signin{
+     position: relative;
+     right: 20px;
+  }
+  .signup{
+    justify-content: center;
+    align-items: center;
+  }
+}
+  
+
+
+@media (max-width: 380px) {
+  #backbut1{
+    position: relative;
+    left: 10px;
+    bottom: 180px;
+  }
+  .titlelog2{
+    justify-self: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top:100px;
+  }
+  .form-group1{
+    position: relative;
+    top: 20px;
+    right: 20px;
+  }
+  .btn-signin{
+     position: relative;
+     right: 20px;
+  }
+  .signup{
+    justify-content: center;
+    align-items: center;
+  }
+}
+  

@@ -53,10 +53,12 @@ export default function Login() {
   return (
     <div className="login-page">
       <a id="backbut" href="/homehero">
-      <i className="fa-solid fa-angles-left"></i></a>
+        <i className="fa-solid fa-angles-left" id="back"></i>
+      </a>
       <div className="background-blur" />
-      <div className="login-card" ref={cardRef}>          
-      <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
+
+      <div className="login-card" ref={cardRef}>
+        <h2 className="titlelog" style={{ color: "black" }}>Login</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -82,9 +84,7 @@ export default function Login() {
           </div>
 
           <div className="options">
-            <label>
-              <input type="checkbox" /> Remember me
-            </label>
+            <label><input type="checkbox" /> Remember me</label>
             <a href="#" className="forgot">Forgot password?</a>
           </div>
 
@@ -94,9 +94,7 @@ export default function Login() {
 
           <p className="signup">
             Don’t have an account?{" "}
-            <a href="/signup">
-              Sign up
-            </a>
+            <a href="/signup">Sign up</a>
           </p>
         </form>
       </div>
