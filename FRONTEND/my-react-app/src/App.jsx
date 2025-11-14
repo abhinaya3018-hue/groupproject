@@ -11,6 +11,9 @@ import Loader from './pages/loder';
 import Loadersapp from './pages/loderapp';
 import BloodGroupStats from './pages/bloodgroup';
 import RequestForm from './pages/requestform';
+import ReviewForm from './pages/ReviewForm';
+import DashboardReviews from './pages/DashboardReviews';
+import Footer from './components/footer';
 
 function App() {
   // ✅ Call the hook so that WebSocket stays active globally
@@ -19,6 +22,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
           <Route path="/"  element={<Loadersapp/>} />
           <Route path="/homehero" element={<Homehero />} />
@@ -31,10 +35,15 @@ function App() {
           <Route path="/loder"  element={<Loader />} />
           <Route path="/bloodgroup" element={<BloodGroupStats />} />
           <Route path="/request/:id" element={<RequestForm />} />
+          <Route path="/review" element={<ReviewForm />} />
+          <Route path="/dashboard" element={<DashboardReviews />} />
           
         
         </Routes> 
+        <Footer />
       </BrowserRouter>
+
+      
     </>
   );
 }

@@ -156,7 +156,7 @@ const Homehero = () => {
           <img src="./src/assets/OIP.webp" alt="donor" />
         </div>
         <div>
-          <h1>Why Donate Blood</h1>
+          <h1>Why Donate Blood ?</h1>
           <h4>Saves Lives & Supports Emergencies</h4>
           <p>
             Every blood donation can save up to three lives. Blood is essential
@@ -173,6 +173,31 @@ const Homehero = () => {
           </p>
         </div>
       </div>
+
+      {/* === Eligibility Section === */}
+      <section id="eligibility">
+      <div id="eligibility">
+        <h3>Blood Donors Eligibility</h3>
+        <p>You should not be suffering from any of the following diseases or taking medicines for them</p>
+        <ul>
+          <li># Age: 18-65 years</li>
+          <li># Weight: Minimum 50 kg</li>
+          <li># Health: Generally healthy and free from infections</li>
+          <li># Hemoglobin: At least 12.5 g/dL</li>
+          <li># Interval: At least 8 weeks between donations</li>
+          <li># Hepatitis B, C</li>
+          <li># AIDS # Diabetes (are you under medication currently?)</li>
+          <li># Fits/ Convulsions (are you under medication currently?)</li>
+          <li># Cancer # Leprosy or any other infectious diseases</li>
+          <li># Any allergies (Only if you are suffering from severe symptoms)</li>
+          <li># Hemophilia/ Bleeding problems</li>
+          <li># Small Pox Vaccination (within the last 3weeks)</li>
+          <li># Hemoglobin deficiency / Anemia (recently)</li>
+          <li># Blood Transfusion (within the last 6 months)</li>
+          <li># Chicken Pox (within 1 year)</li>
+        </ul>
+      </div>
+      </section>
 
        {/* === Image Slider === */}
       <div className="slider d-flex justify-content-center align-items-center mt-5">
@@ -209,29 +234,6 @@ const Homehero = () => {
           </div>
         </div>
       </div>
-
-      {/* === Footer === */}
-      <footer className="footer">
-
-         <div id="fimg">
-        <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
-        <h3 id="he1">RED CONNECT</h3>
-        <p id="pg1">The Indian Red Cross is a voluntary organization with over 1200 branches</p>
-        </div>
-        <ul>
-          <li><a href="#aboutt">About Us</a></li>
-          <li><a href="#vission">Vission</a></li>
-          <li><a href="#mission">Mission</a></li>
-        </ul>
-        
-        <p>© 2025 Red Connect | All Rights Reserved</p>
-        <p>Made with ❤️ to support life-saving blood donations.</p>
-        <div className="footer-links">
-          <Link to="/register">Become a Donor</Link>
-          <span> | </span>
-          <Link to="/donors">View Donors</Link>
-        </div>
-      </footer>
     </>
   );
 };

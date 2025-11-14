@@ -131,9 +131,9 @@ const Home = () => {
     
 
       {/* === About Section === */}
-      <section id="aboutt">
+      
       <div id="id">
-       
+       <section id="aboutt">
         <div id="aboutt">
          <h4>About Us</h4>
           
@@ -146,8 +146,8 @@ const Home = () => {
             <i className="fa-solid fa-users"></i>
           </div>
         </div>
-        
-         
+        </section>
+         <section id="aboutt">
         <div id="vission">
          <h4>Vission</h4>
            
@@ -159,7 +159,8 @@ const Home = () => {
            <i className="fa-solid fa-eye"></i>
           </div>
         </div>
-        
+        </section>
+        <section id="aboutt">
         <div id="mission">
           <h4>Mission</h4>
              
@@ -170,9 +171,9 @@ const Home = () => {
            <i className="fa-solid fa-bullseye"></i>
           </div>
         </div>
-        
+        </section>
       </div>
-      </section>
+      
 
       {/* === Why Donate Section === */}
       <div id="id1">
@@ -180,7 +181,7 @@ const Home = () => {
           <img src="./src/assets/OIP.webp" alt="donor" />
         </div>
         <div>
-          <h1>Why Donate Blood</h1>
+          <h1>Why Donate Blood ?</h1>
           <h4>Saves Lives & Supports Emergencies</h4>
           <p>
             Every blood donation can save up to three lives. Blood is essential
@@ -237,27 +238,6 @@ const Home = () => {
           <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
         </div>
       </div>
-
-      {/* === Footer === */}
-      <footer className="footer">
-        <div id="fimg">
-        <img id="footerimg" src="./src/assets/blood_donation.png" alt="" />
-        <h3 id="he1">RED CONNECT</h3>
-        <p id="pg1">The Red Connect is a voluntary organization with over 1200 branches</p>
-        </div>
-        <div></div>
-        <p>© 2025 Red Connect | All Rights Reserved</p>
-        <p>
-          Made with  to support life-saving blood donations.
-        </p>
-        <div className="footer-links">
-          <Link to="/donors">View Donors</Link>
-          <span> | </span>
-          <button onClick={handleLogout} className="logout-btn">
-            Logout
-          </button>
-        </div>
-      </footer>
     </div>
   );
 };

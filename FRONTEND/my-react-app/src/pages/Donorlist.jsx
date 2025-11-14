@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./donordetail.css"; // ✅ External CSS
-import { useNavigate } from "react-router-dom";
-
+import Select from "react-select"; // ✅ import react-select
+import "./donordetail.css";
 
 export default function DonorList() {
   const [donors, setDonors] = useState([]);
   const [filteredDonors, setFilteredDonors] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState("All");
+  const [selectedCity, setSelectedCity] = useState("All");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/donors/")
@@ -20,26 +22,38 @@ export default function DonorList() {
       .catch((err) => console.error("Error fetching donors:", err));
   }, []);
 
-  // 🩸 Filter logic
-  const handleFilterChange = (e) => {
-    const group = e.target.value;
-    setSelectedGroup(group);
+  //  Combined filter logic
+  useEffect(() => {
+    let filtered = donors;
 
-    if (group === "All") {
-      setFilteredDonors(donors);
-    } else {
-      setFilteredDonors(donors.filter((d) => d.blood_group === group));
+    if (selectedGroup !== "All") {
+      filtered = filtered.filter((d) => d.blood_group === selectedGroup);
     }
+
+    if (selectedCity !== "All") {
+      filtered = filtered.filter(
+        (d) => d.city && d.city.toLowerCase() === selectedCity.toLowerCase()
+      );
+    }
+
+    setFilteredDonors(filtered);
+  }, [selectedGroup, selectedCity, donors]);
+
+  const handleRequest = (donor) => {
+    navigate(`/request/${donor.id}`, { state: { donor } });
   };
 
-  // 🩸 Request handler (you can customize this)
-   const navigate = useNavigate();
+  // Extract unique cities dynamically
+  const cities = [
+    "All",
+    ...new Set(donors.map((d) => d.city).filter((c) => c && c.trim() !== "")),
+  ];
 
-const handleRequest = (donor) => {
-  navigate(`/request/${donor.id}`, { state: { donor } });
-};
-
- 
+  // Convert cities to react-select options
+  const cityOptions = cities.map((city) => ({
+    value: city,
+    label: city,
+  }));
 
   return (
     <div className="donor-container">
@@ -58,31 +72,58 @@ const handleRequest = (donor) => {
         Donors
       </motion.h2>
 
-      {/* 🩸 Filter Dropdown */}
+      {/*  Filter Section */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
         className="filter-container"
       >
-        <label className="filter-label">Search by Blood Group:</label>
-        <select
-          value={selectedGroup}
-          onChange={handleFilterChange}
-          className="filter-select"
-        >
-          <option value="All">All</option>
-          <option value="A+">A+</option>
-          <option value="A-">A−</option>
-          <option value="B+">B+</option>
-          <option value="B-">B−</option>
-          <option value="AB+">AB+</option>
-          <option value="AB-">AB−</option>
-          <option value="O+">O+</option>
-          <option value="O-">O−</option>
-        </select>
+        <div className="filter-item">
+          <label className="filter-label1">Blood Group:</label>
+          <select
+            value={selectedGroup}
+            onChange={(e) => setSelectedGroup(e.target.value)}
+            className="filter-select"
+          >
+            <option value="All">All</option>
+            <option value="A+">A+</option>
+            <option value="A-">A−</option>
+            <option value="B+">B+</option>
+            <option value="B-">B−</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB−</option>
+            <option value="O+">O+</option>
+            <option value="O-">O−</option>
+          </select>
+        </div>
+
+        <div className="filter-item">
+          <label className="filter-label">City:</label>
+          <Select
+            className="filter-select"
+            options={cityOptions}
+            defaultValue={cityOptions[0]}
+            onChange={(option) => setSelectedCity(option.value)}
+            isSearchable //  Enables search bar
+            styles={{
+              control: (base) => ({
+                ...base,
+                width: "200px",
+                borderColor: "#d33",
+                boxShadow: "none",
+              }),
+              option: (base, state) => ({
+                ...base,
+                backgroundColor: state.isFocused ? "#f7d6d6" : "white",
+                color: "#333",
+              }),
+            }}
+          />
+        </div>
       </motion.div>
 
+      {/*  Donor Table */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -93,6 +134,7 @@ const handleRequest = (donor) => {
           <thead>
             <tr className="table-header">
               <th>Name</th>
+              <th>City</th>
               <th>Blood Group</th>
               <th>Actions</th>
             </tr>
@@ -110,6 +152,7 @@ const handleRequest = (donor) => {
                   className="table-row"
                 >
                   <td>{donor.name}</td>
+                  <td>{donor.city}</td>
                   <td className="blood-group">{donor.blood_group}</td>
                   <td>
                     <motion.button
@@ -125,7 +168,7 @@ const handleRequest = (donor) => {
               ))
             ) : (
               <tr>
-                <td colSpan="3" className="empty-row">
+                <td colSpan="4" className="empty-row">
                   No donors found.
                 </td>
               </tr>

@@ -45,3 +45,13 @@ class DonorRequest(models.Model):
 
     def __str__(self):
         return f"Request to {self.donor.name} by {self.name}"
+
+
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    rating = models.IntegerField(default=0)
+    comment = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.rating}⭐"

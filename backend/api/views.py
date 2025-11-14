@@ -18,7 +18,12 @@ import json
 from rest_framework.response import Response
 
 
+from rest_framework.permissions import AllowAny
+from .models import Review
+from .serializers import ReviewSerializer
 
+# from django.core.mail import send_mail
+# from django.http import HttpResponse
 
 
 
@@ -40,6 +45,8 @@ class DonorRequestViewSet(viewsets.ModelViewSet):
     serializer_class = DonorRequestSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['donor__name', 'name', 'email', 'phone']    
+
+   
 
 @api_view(['GET'])
 def donor_group_counts(request):
@@ -104,3 +111,32 @@ def send_request(request, donor_id):
 
     # (Save logic here)
     return Response({'message': 'Request saved successfully!'}, status=status.HTTP_201_CREATED)
+
+
+
+class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = Review.objects.all().order_by('-created_at')
+    serializer_class = ReviewSerializer
+    permission_classes = [AllowAny]
+
+    def create(self, request, *args, **kwargs):
+        print(" Incoming data:", request.data)  # 👈 Add this
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            user = request.user if request.user.is_authenticated else None
+            serializer.save(user=user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            print(" Validation errors:", serializer.errors)  # 👈 Add this
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# def send_test_email(request):
+#     subject = "Welcome to Red Connect "
+#     message = "Thank you for joining our blood donation network!"
+#     email_from = 'your_email@gmail.com'
+#     recipient_list = ['receiver@example.com']  # you can use request.user.email
+
+#     send_mail(subject, message, email_from, recipient_list)
+
+#     return HttpResponse("Email sent successfully!")            

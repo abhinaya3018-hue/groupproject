@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',       # ✅ Add this line
     'api',  
-    'channels',       
+    'channels', 
+     
 ]
 
 # point to your ASGI application (create this file next)
@@ -71,6 +72,7 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
 APPEND_SLASH = True
 
