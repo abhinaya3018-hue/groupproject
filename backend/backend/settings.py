@@ -77,6 +77,36 @@ CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 APPEND_SLASH = True
 
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+FAST2SMS_KEY = os.environ.get("FAST2SMS_KEY")
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {"class": "logging.StreamHandler"},
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    },
+}
 
 CORS_ALLOW_METHODS = [
     'DELETE',

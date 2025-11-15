@@ -28,4 +28,5 @@ urlpatterns = [
     path('send_request/<int:donor_id>/', send_request, name='send_request'),
     path('donor_group_counts/', donor_group_counts, name='donor_group_counts'),
     # path('send-email/', views.send_test_email, name='send_email'),
+   
 ]

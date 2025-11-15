@@ -22,9 +22,17 @@ from rest_framework.permissions import AllowAny
 from .models import Review
 from .serializers import ReviewSerializer
 
+
+from django.core.mail import send_mail
+from smtplib import SMTPException
+from django.conf import settings
+import requests
+import logging
+
 # from django.core.mail import send_mail
 # from django.http import HttpResponse
 
+sms_api_key = settings.FAST2SMS_KEY
 
 
 class DonorViewSet(viewsets.ModelViewSet):
@@ -97,20 +105,20 @@ def login_view(request):
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
 
 
-@api_view(['GET','POST'])
-def send_request(request, donor_id):
-    # For debugging, print the donor_id
-    print("Received donor ID:", donor_id)
+# @api_view(['GET','POST'])
+# def send_request(request, donor_id):
+#     # For debugging, print the donor_id
+#     print("Received donor ID:", donor_id)
     
-    # Example: Save request in DB
-    data = request.data
-    name = data.get('name')
-    phone = data.get('phone')
-    email = data.get('email')
-    message = data.get('message')
+#     # Example: Save request in DB
+#     data = request.data
+#     name = data.get('name')
+#     phone = data.get('phone')
+#     email = data.get('email')
+#     message = data.get('message')
 
-    # (Save logic here)
-    return Response({'message': 'Request saved successfully!'}, status=status.HTTP_201_CREATED)
+#     # (Save logic here)
+#     return Response({'message': 'Request saved successfully!'}, status=status.HTTP_201_CREATED)
 
 
 
@@ -131,12 +139,69 @@ class ReviewViewSet(viewsets.ModelViewSet):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# def send_test_email(request):
-#     subject = "Welcome to Red Connect "
-#     message = "Thank you for joining our blood donation network!"
-#     email_from = 'your_email@gmail.com'
-#     recipient_list = ['receiver@example.com']  # you can use request.user.email
+logger = logging.getLogger(__name__)
 
-#     send_mail(subject, message, email_from, recipient_list)
+@api_view(['POST'])
+def send_request(request, donor_id):
+    try:
+        donor = Donor.objects.get(id=donor_id)
+    except Donor.DoesNotExist:
+        return Response({"detail": "Donor not found"}, status=status.HTTP_404_NOT_FOUND)
 
-#     return HttpResponse("Email sent successfully!")            
+    user_name = request.data.get("name", "").strip()
+    phone = request.data.get("phone", "").strip()
+    email = request.data.get("email", "").strip()
+    message = request.data.get("message", "").strip()
+
+    # validate required fields
+    if not user_name or not phone or not email:
+        return Response({"detail": "Missing requester name/phone/email"}, status=status.HTTP_400_BAD_REQUEST)
+
+    if not donor.email:
+        return Response({"detail": "Donor has no email configured"}, status=status.HTTP_400_BAD_REQUEST)
+
+    subject = f"Blood Request from {user_name}"
+    body = f"""Hello {donor.name},
+
+You have received a blood request.
+
+Requester Details:
+Name: {user_name}
+Phone: {phone}
+Email: {email}
+Message: {message}
+
+Please respond as soon as possible.
+"""
+
+    # SEND EMAIL - with robust error handling
+    try:
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [donor.email], fail_silently=False)
+    except Exception as e:
+        logger.exception("Failed to send email to donor")
+        return Response({"detail": "Failed to send email to donor", "error": str(e)}, status=status.HTTP_502_BAD_GATEWAY)
+
+    # SEND SMS - wrap in try/except
+    try:
+        sms_api_key = settings.FAST2SMS_KEY  # put this in settings/env
+        sms_message = f"Blood request from {user_name}. Check email for details."
+        resp = requests.post(
+            "https://www.fast2sms.com/dev/bulkV2",
+            headers={"authorization": sms_api_key, "Content-Type": "application/json"},
+            json={
+                "route": "v3",
+                "sender_id": "TXTIND",
+                "message": sms_message,
+                "language": "english",
+                "flash": 0,
+                "numbers": donor.phone
+            },
+            timeout=10
+        )
+        resp.raise_for_status()
+    except Exception as e:
+        logger.exception("SMS send failed (non-fatal)")
+        # SMS failure may be non-fatal; still return success but notify front-end
+        return Response({"message": "Request sent (email OK). SMS failed", "sms_error": str(e)}, status=status.HTTP_200_OK)
+
+    return Response({"message": "Request sent successfully"}, status=status.HTTP_200_OK)
