@@ -18,11 +18,11 @@ class DonorRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = DonorRequest
         fields = '__all__'
+    
+
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = ['id', 'rating', 'comment', 'created_at']
-        extra_kwargs = {'user': {'required': False}}     
-
-        
+        fields = ['id', 'user_name', 'rating', 'comment', 'created_at']
+       

@@ -55,3 +55,11 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.rating}⭐"
+
+
+class Review(models.Model):
+    user_name = models.CharField(max_length=100, default="Anonymous")
+    rating = models.IntegerField()
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+

@@ -29,8 +29,9 @@ from django.conf import settings
 import requests
 import logging
 
-# from django.core.mail import send_mail
-# from django.http import HttpResponse
+from rest_framework import generics
+
+from rest_framework.viewsets import ModelViewSet
 
 sms_api_key = settings.FAST2SMS_KEY
 
@@ -54,6 +55,9 @@ class DonorRequestViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ['donor__name', 'name', 'email', 'phone']    
 
+class ReviewListCreateView(generics.ListCreateAPIView):
+    queryset = Review.objects.all().order_by('-id')
+    serializer_class = ReviewSerializer
    
 
 @api_view(['GET'])
@@ -105,38 +109,18 @@ def login_view(request):
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)   
 
 
-# @api_view(['GET','POST'])
-# def send_request(request, donor_id):
-#     # For debugging, print the donor_id
-#     print("Received donor ID:", donor_id)
-    
-#     # Example: Save request in DB
-#     data = request.data
-#     name = data.get('name')
-#     phone = data.get('phone')
-#     email = data.get('email')
-#     message = data.get('message')
-
-#     # (Save logic here)
-#     return Response({'message': 'Request saved successfully!'}, status=status.HTTP_201_CREATED)
 
 
-
-class ReviewViewSet(viewsets.ModelViewSet):
-    queryset = Review.objects.all().order_by('-created_at')
+class ReviewViewSet(ModelViewSet):
+    queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
-        print(" Incoming data:", request.data)  # 👈 Add this
+        print("Incoming data:", request.data)
         serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            user = request.user if request.user.is_authenticated else None
-            serializer.save(user=user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            print(" Validation errors:", serializer.errors)  # 👈 Add this
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()   # <-- IMPORTANT FIX
+        return Response(serializer.data, status=201)
 
 
 logger = logging.getLogger(__name__)
