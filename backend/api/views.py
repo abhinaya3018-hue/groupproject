@@ -9,28 +9,19 @@ from rest_framework import status
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 from django.db.models import Count
-
 from django.shortcuts import get_object_or_404
-from .models import Donor
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from rest_framework.response import Response
-
-
 from rest_framework.permissions import AllowAny
 from .models import Review
 from .serializers import ReviewSerializer
-
-
 from django.core.mail import send_mail
 from smtplib import SMTPException
 from django.conf import settings
 import requests
 import logging
-
 from rest_framework import generics
-
 from rest_framework.viewsets import ModelViewSet
 
 sms_api_key = settings.FAST2SMS_KEY

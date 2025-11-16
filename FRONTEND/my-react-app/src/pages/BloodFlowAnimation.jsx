@@ -23,16 +23,14 @@ export default function BloodFlowInteractive() {
 
   return (
     <div className="blood-panel">
-
       {/* Donor Column */}
       <div className="donor-col">
         {donors.map((g) => (
           <div
             key={g}
             className={`donor-bag 
-              ${selected === g ? "bag-selected" : ""}
-              ${selected && selected !== g ? "bag-faded" : ""}
-            `}
+              ${selected === g ? "bag-selected" : ""} 
+              ${selected && selected !== g ? "bag-faded" : ""}`}
             onClick={() => handleSelect(g)}
           >
             <span className="bag-label">{g}</span>
@@ -41,20 +39,31 @@ export default function BloodFlowInteractive() {
       </div>
 
       {/* Flow Paths */}
-      <svg className="flow-area" viewBox="0 0 400 400">
-        {donors.map((g, i) => (
-          compatibility[g].map((target, j) => (
-            <path
-              key={`${g}-${target}`}
-              className={`
-                flow-path
-                path-${g.replace("+","p")}-${target.replace("+","p")}
-                ${selected === g ? "active-path" : ""}
-              `}
-              d={`M50 ${50 + i * 100} C 200 ${50 + i * 100}, 220 ${100 + j * 100}, 350 ${50 + j * 100}`}
-            />
-          ))
-        ))}
+      <svg className="flow-area" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+        {donors.map((g, i) =>
+          compatibility[g].map((target) => {
+            const targetIndex = donors.indexOf(target); 
+            const startY = 50 + i * 100;
+            const endY = 50 + targetIndex * 100;
+            const controlY = (startY + endY) / 2; 
+
+            const d = `M50 ${startY} C 200 ${startY}, 220 ${controlY}, 350 ${endY}`;
+
+            const isActive = selected === g; 
+
+            return (
+              <path
+                key={`${g}-${target}`}
+                className={`
+                  flow-path
+                  path-${g.replace("+", "p")}-${target.replace("+", "p")}
+                  ${isActive ? "active-path" : ""}
+                `}
+                d={d}
+              />
+            );
+          })
+        )}
       </svg>
 
       {/* Recipient Column */}
@@ -64,7 +73,7 @@ export default function BloodFlowInteractive() {
             key={g}
             className={`
               recipient-circle 
-              ${selected && checkAllowed(g) ? "recipient-allowed" : ""}
+              ${selected && checkAllowed(g) ? "recipient-allowed" : ""} 
               ${selected && !checkAllowed(g) ? "recipient-blocked" : ""}
             `}
           >
