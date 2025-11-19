@@ -8,6 +8,11 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+#base{
+  position: relative;
+  bottom: 170px;
+  left: 13px;
+}
 /* Title */
 .titlelog2 {
   text-align: left;

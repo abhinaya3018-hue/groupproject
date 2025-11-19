@@ -43,7 +43,7 @@ const Signup = () => {
       <i className="fa-solid fa-angles-left" id="base"></i></a>
       <div className="sign1">
         <h2 className="titlelog2">
-          <i id="sign" className="fa fa-user-plus"></i> Create an Account
+           Create an Account
         </h2>
 
         <form onSubmit={handleSubmit}>
