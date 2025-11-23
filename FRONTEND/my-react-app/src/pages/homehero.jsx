@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./homehero.css";
-import { Link } from "react-router-dom"; // ✅ import Link if you use it in footer
+import { Link } from "react-router-dom"; 
 
 
 const Homehero = () => {
@@ -180,21 +180,21 @@ const Homehero = () => {
         <h3>Blood Donors Eligibility</h3>
         <p>You should not be suffering from any of the following diseases or taking medicines for them</p>
         <ul>
-          <li># Age: 18-65 years</li>
-          <li># Weight: Minimum 50 kg</li>
-          <li># Health: Generally healthy and free from infections</li>
-          <li># Hemoglobin: At least 12.5 g/dL</li>
-          <li># Interval: At least 8 weeks between donations</li>
-          <li># Hepatitis B, C</li>
-          <li># AIDS # Diabetes (are you under medication currently?)</li>
-          <li># Fits/ Convulsions (are you under medication currently?)</li>
-          <li># Cancer # Leprosy or any other infectious diseases</li>
-          <li># Any allergies (Only if you are suffering from severe symptoms)</li>
-          <li># Hemophilia/ Bleeding problems</li>
-          <li># Small Pox Vaccination (within the last 3weeks)</li>
-          <li># Hemoglobin deficiency / Anemia (recently)</li>
-          <li># Blood Transfusion (within the last 6 months)</li>
-          <li># Chicken Pox (within 1 year)</li>
+          <li>Age: 18-65 years</li>
+          <li>Weight: Minimum 50 kg</li>
+          <li>Health: Generally healthy and free from infections</li>
+          <li>Hemoglobin: At least 12.5 g/dL</li>
+          <li>Interval: At least 8 weeks between donations</li>
+          <li>Hepatitis B, C</li>
+          <li>AIDS # Diabetes (are you under medication currently?)</li>
+          <li>Fits/ Convulsions (are you under medication currently?)</li>
+          <li>Cancer # Leprosy or any other infectious diseases</li>
+          <li>Any allergies (Only if you are suffering from severe symptoms)</li>
+          <li>Hemophilia/ Bleeding problems</li>
+          <li>Small Pox Vaccination (within the last 3weeks)</li>
+          <li>Hemoglobin deficiency / Anemia (recently)</li>
+          <li>Blood Transfusion (within the last 6 months)</li>
+          <li>Chicken Pox (within 1 year)</li>
         </ul>
       </div>
       </section>

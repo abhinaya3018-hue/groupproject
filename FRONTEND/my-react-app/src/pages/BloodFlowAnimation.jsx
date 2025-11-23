@@ -24,6 +24,8 @@ export default function BloodFlowInteractive() {
   return (
     <div className="blood-panel">
       {/* Donor Column */}
+       <a id="backbut1" href="/login">
+      <i className="fa-solid fa-angles-left" id="base5"></i></a>
       <div className="donor-col">
         {donors.map((g) => (
           <div
@@ -47,7 +49,7 @@ export default function BloodFlowInteractive() {
             const endY = 50 + targetIndex * 100;
             const controlY = (startY + endY) / 2; 
 
-            const d = `M50 ${startY} C 200 ${startY}, 220 ${controlY}, 350 ${endY}`;
+            const d = `M10 ${startY} C 200 ${startY}, 220 ${controlY}, 350 ${endY}`;
 
             const isActive = selected === g; 
 

@@ -16,7 +16,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border-top: 4px solid #c21807;  /* deep red */
+  border-top: 4px solid #c21807;  
   border-right: 4px solid transparent;
   border-bottom: 4px solid #c21807;
   border-left: 4px solid transparent;
@@ -24,7 +24,7 @@
 }
 
 .logo {
-  width: 400px; /* adjust for your logo size */
+  width: 400px; 
   z-index: 2;
 }
 
