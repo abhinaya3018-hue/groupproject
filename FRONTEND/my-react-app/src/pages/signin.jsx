@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 
 const Signup = () => {
@@ -39,8 +39,8 @@ const Signup = () => {
 
   return (
     <div className="login-page1">
-       <a id="backbut1" href="/login">
-      <i className="fa-solid fa-angles-left" id="base"></i></a>
+       <Link id="backbut1" to="/login">
+      <i className="fa-solid fa-angles-left" id="base"></i></Link>
       <div className="sign1">
         <h2 className="titlelog2">
            Create an Account
@@ -86,7 +86,7 @@ const Signup = () => {
 
           <p className="signup">
             Already have an account?
-            <a href="/login"><i className="fa fa-sign-in"></i> Login</a>
+            <Link to="/login"><i className="fa fa-sign-in"></i> Login</Link>
           </p>
         </form>
       </div>

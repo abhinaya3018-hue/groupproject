@@ -122,6 +122,14 @@
   animation: dropMove 2.2s linear forwards;
 }
 
+#backbut10{
+  color: black;
+  font-size: 25px;
+  position: relative;
+  bottom: 230px;
+  right: 310px;
+}
+
 /* Line draw animation */
 @keyframes flowLine {
   from { stroke-dashoffset: 350; }
@@ -132,4 +140,10 @@
 @keyframes dropMove {
   from { offset-distance: 0%; }
   to { offset-distance: 100%; }
+}
+
+@media (max-width:1025px){
+  .blood-panel{
+    margin-top: 10% ;
+  }
 }

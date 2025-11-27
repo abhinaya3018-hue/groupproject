@@ -101,8 +101,6 @@ const Homehero = () => {
         </div>
       </div>
 
-     
-
       {/* === About Section === */}
       <div id="id">
       <section id="aboutt">

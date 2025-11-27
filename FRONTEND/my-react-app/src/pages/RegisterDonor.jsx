@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../api";
 import "./register.css";
+import { Link } from "react-router-dom";
 
 export default function RegisterDonor() {
   const [form, setForm] = useState({
@@ -37,8 +38,8 @@ export default function RegisterDonor() {
 
   return (
     <div className="register-section">
-       <a id="backbut1" href="/home">
-      <i className="fa-solid fa-angles-left"></i></a>
+       <Link id="backbut1" to="/home">
+      <i className="fa-solid fa-angles-left"></i></Link>
       <h2>Register as Donor</h2>
 
       <form onSubmit={handleSubmit} className="grid-form">

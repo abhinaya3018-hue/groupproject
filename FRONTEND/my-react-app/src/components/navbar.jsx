@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./navbar.css"; 
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navbar() {
   return (
@@ -10,8 +11,8 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <Link className="nav-link" to="/Aboutus">About Us</Link>
-            <Link className="nav-link" to="/eligibility">Eligibility</Link>
+            <HashLink className="nav-link" smooth to="/#aboutt">About Us</HashLink>
+            <HashLink className="nav-link" smooth to="/#eligibility">Eligibility</HashLink>
             <Link className="nav-link" to="/bloodflow">Red Flow</Link>
             <Link className="nav-link" to="/login"><i className="fa fa-sign-in"></i> Login</Link>
           </div>

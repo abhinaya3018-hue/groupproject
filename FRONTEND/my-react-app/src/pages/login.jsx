@@ -15,15 +15,20 @@ export default function Login() {
       const { left, top, width, height } = card.getBoundingClientRect();
       const x = (e.clientX - left) / width;
       const y = (e.clientY - top) / height;
+
       const rotateX = (y - 0.5) * 10;
       const rotateY = (x - 0.5) * -10;
+
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
+
     const resetTilt = () => {
       card.style.transform = "rotateX(0) rotateY(0)";
     };
+
     card.addEventListener("mousemove", handleMouseMove);
     card.addEventListener("mouseleave", resetTilt);
+
     return () => {
       card.removeEventListener("mousemove", handleMouseMove);
       card.removeEventListener("mouseleave", resetTilt);
@@ -37,24 +42,37 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login/", formData);
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/login/",
+        formData
+      );
+
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("username", formData.username);
+
+        // ⭐ SAVE LOGIN STATUS
+        localStorage.setItem("isLoggedIn", "true");
       }
+
+      // ⭐ REDIRECT TO HOME
       navigate("/home");
+
     } catch (err) {
-      const message = err.response?.data?.detail || "Invalid username or password.";
+      const message =
+        err.response?.data?.detail || "Invalid username or password.";
       setError(message);
     }
   };
 
   return (
     <div className="login-page">
-      <a id="backbut" href="/homehero">
+      <Link id="backbut" to="/homehero">
         <i className="fa-solid fa-angles-left" id="back"></i>
-      </a>
+      </Link>
+
       <div className="background-blur" />
 
       <div className="login-card" ref={cardRef}>

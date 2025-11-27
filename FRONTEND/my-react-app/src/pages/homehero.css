@@ -276,3 +276,41 @@ body{
   margin-top: 2%;
   margin-left: 2%;
 }
+
+@media (max-width:769px){
+  #id >section{
+    width: 100%;
+    height: auto;
+   
+  }
+  /* #id >section i{
+    display: none;
+  } */
+  #abouticon{
+    display: none;
+  } 
+  #vissionicon{
+    display: none;
+  }
+  #missionicon{
+    display: none;
+  }
+}
+
+@media (max-width:426px){
+  #id{
+    /* display: none; */
+    display: flex;
+   flex-direction: column;
+  }
+
+  .title1 h1{
+    font-size: 3em;
+  }
+}
+
+@media (max-width:320px){
+  .title1 h1{
+    font-size: 2.5em;
+  }
+}
