@@ -122,7 +122,7 @@ const Home = () => {
     </div>
 
     <div id="donorlistbox" className="donor-list-box">
-      <Link to="/donors" className="link-btn">The Lifesaver Board</Link>
+      <Link to="/donors" className="link-btn" id="the">The Lifesaver Board</Link>
     </div>
   </div>
 </section>

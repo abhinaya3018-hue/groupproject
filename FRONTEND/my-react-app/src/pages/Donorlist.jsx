@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Select from "react-select"; // ✅ import react-select
+import Select from "react-select"; 
 import "./donordetail.css";
 
 export default function DonorList() {
@@ -79,7 +79,7 @@ export default function DonorList() {
         transition={{ delay: 0.3, duration: 0.6 }}
         className="filter-container"
       >
-        <div className="filter-item">
+        <div className="filter-item" id="blood-filter">
           <label className="filter-label1">Blood Group:</label>
           <select
             value={selectedGroup}
@@ -98,7 +98,7 @@ export default function DonorList() {
           </select>
         </div>
 
-        <div className="filter-item">
+        <div className="filter-item" id="city-filter">
           <label className="filter-label">City:</label>
           <Select
             className="filter-select"

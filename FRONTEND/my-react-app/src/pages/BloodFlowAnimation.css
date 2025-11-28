@@ -144,6 +144,32 @@
 
 @media (max-width:1025px){
   .blood-panel{
-    margin-top: 10% ;
+    margin-top: 12% ;
   }
+  #backbut10{
+    position: relative;
+    left: -190px;
+    bottom:270px;
+  }
+}
+@media (max-width:768px){
+
+ .donor-bag{
+  width: 65px;
+  height: 65px;
+ } 
+.recipient-circle{
+   width: 70px;
+  height: 70px;
+}
+.blood-panel{
+  position: relative;
+  bottom: 30px;
+}
+.backbut10{
+  position: relative;
+  right: 100px;
+  top: 100px;
+}
+  
 }

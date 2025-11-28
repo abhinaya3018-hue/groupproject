@@ -167,3 +167,36 @@
   left: 250px;
  
 }
+
+@media (max-width: 1025px) {
+  .filter-item {
+    position: relative;
+    right: 80px;
+  }
+} 
+
+@media (max-width: 768px) {
+  .filter-item {
+    position: relative;
+    right: 180px;
+  }
+} 
+
+@media (max-width: 426px) {
+#city-filter {
+    position: relative;
+   top: 60px;
+   left: -300px;
+  }
+  .donor-table{
+    margin-top: 50px;
+  }
+  #blood-filter {
+    position: relative;
+   left: -85px;
+  }
+  .donor-table{
+    width: 100px;
+  }
+   
+}
