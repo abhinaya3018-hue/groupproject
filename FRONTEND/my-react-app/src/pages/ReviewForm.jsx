@@ -28,7 +28,7 @@ export default function ReviewForm() {
 
   return (
     <div className="review-container">
-      <h2>Leave a Review</h2>
+      <h2>Feedback</h2>
 
       {/* Username */}
       <input
@@ -53,13 +53,13 @@ export default function ReviewForm() {
       </div>
 
       {/* Comment */}
-      <textarea
+      <textarea id="comment-box"
         placeholder="Write your comment..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />
 
-      <button onClick={handleSubmit}>Submit</button>
+      <button id="subm-button" onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
