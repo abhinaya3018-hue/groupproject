@@ -19,9 +19,9 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-}
+} 
 
-.title1 h1{
+#title1 h1{
   width: 100%;
   text-align: center;
   color: white;
@@ -29,10 +29,12 @@ body{
   font-weight: bold;
   text-shadow: 0 0 20px #ff0000;
   animation: glow 2s ease-in-out infinite alternate;
-  margin-top: 250px;
-
+  padding-top: 230px;
 }
-.title1 h3{
+#title1{
+  padding-left: 27%;
+}
+#title1 h3{
   text-align: center;
   color: white;
   margin-top: 10px;

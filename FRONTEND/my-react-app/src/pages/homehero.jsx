@@ -115,7 +115,7 @@ const Homehero = () => {
       {/* === Hero Section === */}
       <div className="blood-animation-container">
         <canvas ref={canvasRef} id="bloodCanvas"></canvas>
-        <div  className="title1">
+        <div  id="title1">
           <h1>RED CONNECT</h1>
           <h3>
             Every donor is a hero without a cape
