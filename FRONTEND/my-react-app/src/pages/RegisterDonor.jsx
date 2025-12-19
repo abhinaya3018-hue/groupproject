@@ -36,6 +36,7 @@ export default function RegisterDonor() {
       .catch(() => setMsg("❌ Error registering donor."));
   };
 
+
   return (
     <div className="register-section">
        <Link id="backbut1" to="/home">
