@@ -1,145 +1,184 @@
 .footer {
-  background: #440000;
+  background: linear-gradient(135deg, #440000, #6a0000);
   color: #fff;
-  text-align: center;
-  margin-top: 40px;
-  padding: 15px;
+  padding: 40px 20px 15px;
+  margin-top: 50px;
 }
 
-.fbox{
+.fbox {
   display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.footer-top {
+  max-width: 320px;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.footer-t {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #footerimg {
-  width: 110px;
-  height: 60px;
+  width: 90px;
+  animation: float 3s ease-in-out infinite;
 }
 
 .footer-title {
-  font-size: 1.4rem;
-  color: white;
-  padding-top: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .footer-desc {
   font-size: 0.95rem;
-  max-width: 300px;
-
+  color: #ffdddd;
+  margin-top: 10px;
 }
+
+/* FOOTER MENU */
 .footer-menu {
   list-style: none;
-  padding-top: 15px;
- 
+  padding: 0;
+  animation: fadeUp 1s ease forwards;
 }
+
+.footer-menu h5 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.footer-menu h5::after {
+  content: "";
+  width: 35px;
+  height: 3px;
+  background: #ffcccc;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+
+.footer-menu li {
+  margin: 10px 0;
+}
+
 .footer-menu a {
   color: #ffcccc;
   text-decoration: none;
-  font-size: 1rem;
-}
-.footer-t{
-  display: flex;
-}
-.footer-menu a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-
-
-@media (max-width:769px){
-  .footer-menu{
-    position: relative;
-    /* left:"500px", */
-  }
-}
-
-@media (max-width:426px){
-  
-  .fbox{
-    display: flex;
-    flex-direction: column;
-     justify-self: center;
-   
-  }
-}
-
-/* ----------- REVIEW FORM ------------- */
-
-.review-container {
-  /* margin-top: 10%; */
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: whitesmoke;
-  padding: 3px;
-  justify-items:start;
-  margin-left: auto;
-}
-
-.review-container h2 {
-  justify-items:center;
-  color: #440000;
-}
-
-.name-input {
-  width: 100%;
-  padding: 4px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-#comment-box {
-  width: 100%;
-  height: 41px;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-#subm-button {
-  background-color: #440000;
-  color: white;
-  padding: 3px 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px auto;
-  display: block;
-}
-
-/* Star Rating */
-.star {
-  font-size: 22px;
-  cursor: pointer;
-  color: #ccc;
-  transition: color 0.2s;
-}
-
-.star.filled {
-  color: rgb(252, 219, 36);
-}
-
-.footer-menu li a svg {
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.footer-menu li a {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.footer-menu li a {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: 0.3s;
 }
 
-.footer-menu li a svg {
-  margin-right: 5px;
-  vertical-align: middle;
+.footer-menu a:hover {
+  color: #fff;
+  transform: translateX(6px);
 }
 
+/* FOLLOW US – ICON ONLY */
+.follow-us {
+  display: flex;
+  gap: 15px;
+  margin-top: 32px;
+}
 
+.follow-us li {
+  margin: 0;
+}
 
+.follow-us a {
+  font-size: 22px;
+  color: #ffcccc;
+}
 
+.follow-us a:hover {
+  transform: translateY(-4px) scale(1.2);
+}
+
+/* FEEDBACK */
+.review-container {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 260px;
+}
+
+.review-container h2 {
+  text-align: center;
+  color: #ffdddd;
+  margin-bottom: 10px;
+}
+
+.name-input,
+#comment-box {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 8px;
+}
+
+#subm-button {
+  background: linear-gradient(135deg, #440000, #7a0000);
+  color: #fff;
+  border: none;
+  padding: 6px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+}
+
+/* STARS */
+.stars {
+  text-align: center;
+}
+
+.star {
+  font-size: 22px;
+  color: gold;
+  cursor: pointer;
+}
+
+/* COPYRIGHT */
+#year {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #ffdddd;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .fbox {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .follow-us {
+    justify-content: center;
+  }
+
+  .footer-menu h5::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

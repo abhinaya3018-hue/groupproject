@@ -126,7 +126,7 @@ const Homehero = () => {
 
       {/* === About Section === */}
       <div id="id">
-      <section id="aboutt">
+      <section className="aboutt">
 
         <div id="aboutt">
          <h4>About Us</h4>
@@ -198,7 +198,7 @@ const Homehero = () => {
       {/* === Eligibility Section === */}
       <section id="eligibility">
       <div id="eligibility">
-        <h3>Blood Donors Eligibility</h3>
+        <h3>Donors Eligibility</h3>
         <p>You should not be suffering from any of the following diseases or taking medicines for them</p>
         <ul>
           <li>Age: 18-65 years</li>
@@ -221,8 +221,8 @@ const Homehero = () => {
       </section>
 
        {/* === Image Slider === */}
-       <h1 style={{ color: '#a30000',textAlign:'center'}}>OUR SERVICE</h1>
-      <div className="slider d-flex justify-content-center align-items-center mt-5">
+       <h3 style={{ color: '#a30000',textAlign:'center',  fontSize: '2em'}}>OUR SERVICE</h3>
+      <div className="slider d-flex justify-content-center align-items-center mt-4">
         <div className="slider_row d-flex">
           <div className="slider_column">
             <img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" />
@@ -309,7 +309,7 @@ const Homehero = () => {
                     e.currentTarget.style.transform = "translateY(0)";
                   }}
                 >
-                  {/* Profile Picture */}
+                  {/*  Profile Picture */}
                   <img
                     src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
                       r.user_name

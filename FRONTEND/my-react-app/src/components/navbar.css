@@ -12,6 +12,8 @@
   font-size: 1.5rem;
   letter-spacing: 1px;
   font-family: "Oswald", sans-serif;
+  position: relative;
+  right: 5%;
 }
 
 .nav-link {
@@ -19,6 +21,9 @@
   text-transform: uppercase;
   margin: 0 10px;
   transition: all 0.3s;
+  position: relative;
+  left: 45px;
+  
 }
 
 .nav-link:hover {
@@ -43,4 +48,11 @@
   0% { transform: scale(1); filter: drop-shadow(0 0 2px #ff0000); }
   50% { transform: scale(1.2); filter: drop-shadow(0 0 8px #ff0000); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px #ff0000); }
+}
+
+@media (max-width: 426px) {
+   .navbar-brand {
+    left: -30px; 
+  
+}
 }

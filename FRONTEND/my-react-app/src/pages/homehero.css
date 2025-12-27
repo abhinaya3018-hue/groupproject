@@ -33,6 +33,7 @@ body{
 }
 #title1{
   padding-left: 27%;
+  padding-top: 50px;
 }
 #title1 h3{
   text-align: center;
@@ -52,7 +53,7 @@ body{
 /*about us*/
 #id{
   display: flex;
-  gap: 40px;
+  gap: 80px;
   padding: 50px;
   justify-self: center;
 }
@@ -153,10 +154,30 @@ body{
   position: relative;
   font-size: 30px;
   top: 10px;
-  left: 8px;
+  left: 5px;
 }
 
-/* About Us & Why Donate Blood Sections */
+/*media query for about us*/
+@media (max-width:322px){
+  #id{
+    margin-top: 10%;
+  }
+  
+}
+
+/* Pop-up animation */
+#id {
+  perspective: 1200px;
+}
+
+#id > section {
+  transition: transform 0.4s ease;
+}
+
+#id > section:hover {
+  transform: rotateX(10deg) rotateY(-10deg) scale(1.05);
+}
+/*Why Donate Blood Sections */
 
 #id1 {
   display: flex;
@@ -273,10 +294,15 @@ body{
   text-align: center;
   color: #a30000;
   font-size: 2em;
+  margin-top: 3%;
 }
 #eligibility p{
   margin-top: 2%;
   margin-left: 2%;
+  font-weight: bold;
+}
+#eligibility ul{
+  margin-left: 4%;
 }
 
 @media (max-width:769px){
@@ -306,13 +332,32 @@ body{
    flex-direction: column;
   }
 
-  .title1 h1{
+  #title1 h1{
     font-size: 3em;
+  }
+  #title1 h3{
+    font-size: 1.2em;
+  }
+  #title1{
+    padding-top: 0;
   }
 }
 
-@media (max-width:320px){
-  .title1 h1{
+@media (max-width:323px){
+  #title1 h1{
     font-size: 2.5em;
   }
+  #title1 h3{
+    font-size: 1em;
+  }
+}
+@media (max-width:376px){
+   #title1 h3{
+    font-size: 1.1em;
+  }  
+}
+@media  (max-width:769px){
+  #title1{
+    padding-left: 10px;
+  }  
 }
