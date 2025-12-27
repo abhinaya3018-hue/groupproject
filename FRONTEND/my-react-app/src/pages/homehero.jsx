@@ -5,6 +5,7 @@ import axios from "axios";
 import Carousel from "react-multi-carousel";
 import { FaStar } from "react-icons/fa"; 
 import "react-multi-carousel/lib/styles.css";
+import { color } from "framer-motion";
 
 
 
@@ -220,6 +221,7 @@ const Homehero = () => {
       </section>
 
        {/* === Image Slider === */}
+       <h1 style={{ color: '#a30000',textAlign:'center'}}>OUR SERVICE</h1>
       <div className="slider d-flex justify-content-center align-items-center mt-5">
         <div className="slider_row d-flex">
           <div className="slider_column">
@@ -255,7 +257,8 @@ const Homehero = () => {
         </div>
       </div>
 
-    <div style={{ padding: "10px", marginTop: "5%" }}>
+      {/* === Reviews Section === */}
+      <div style={{ padding: "10px", marginTop: "5%" }}>
           
           <h2
             style={{
@@ -272,8 +275,19 @@ const Homehero = () => {
           {reviews.length === 0 ? (
             <p style={{ textAlign: "center", color: "#555" }}>No reviews yet.</p>
           ) : (
-            <Carousel responsive={responsive} autoPlay infinite>
-              {reviews.map((r) => (
+          <Carousel
+          responsive={responsive}
+          autoPlay
+          infinite
+          arrows={false}              
+          showDots={false}           
+          autoPlaySpeed={2000}        
+          pauseOnHover={false}        
+          customTransition="transform 1s ease-in-out"
+          transitionDuration={2000}
+          containerClass="carousel-container"
+          >
+           {reviews.map((r) => (
                 <div
                   key={r.id}
                   style={{
@@ -295,7 +309,7 @@ const Homehero = () => {
                     e.currentTarget.style.transform = "translateY(0)";
                   }}
                 >
-                  {/* LEFT: Profile Picture */}
+                  {/* Profile Picture */}
                   <img
                     src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
                       r.user_name
