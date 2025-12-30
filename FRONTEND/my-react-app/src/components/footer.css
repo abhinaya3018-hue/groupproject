@@ -52,7 +52,9 @@
   margin-bottom: 12px;
   position: relative;
 }
-
+.footer-menu ul{
+  list-style: none ;
+}
 .footer-menu h5::after {
   content: "";
   width: 35px;

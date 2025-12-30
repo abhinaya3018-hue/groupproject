@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 import footerLogo from "../assets/blood_donation.png";
 
+
 import {
   FaInstagram,
   FaTwitter,
@@ -11,7 +12,7 @@ import {
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-import ReviewForm from "./ReviewForm";
+import ReviewForm from "../pages/ReviewForm";
 
 export default function Footer() {
   return (
@@ -29,15 +30,33 @@ export default function Footer() {
             We save lives through the power of blood donation.
             Connecting donors with those in need.
           </p>
+          
+          {/* FOLLOW US – ICON ONLY */}
+        <div className="footer-menu">
+          <ul className="follow-us">
+            <li><a href="#"><FaFacebook /></a></li>
+            <li><a href="#"><FaInstagram /></a></li>
+            <li><a href="#"><FaTwitter /></a></li>
+            <li><a href="#"><FaWhatsapp /></a></li>
+          </ul>
+        </div>
+        </div>
+
+        {/*about us */}
+        <div className="footer-menu">
+          <h5>About Us</h5>
+          <ul><a href="#about">About Us</a></ul>
+          <ul><a href="#about">Vission</a></ul>
+          <ul><a href="#about">Mission</a></ul>
         </div>
 
         {/* CONNECT */}
         <div className="footer-menu">
-          <h5>Connect</h5>
+          <h5>Contacts</h5>
           <ul>
             <li>
-              <a href="tel:+919876543210">
-                <FaPhoneAlt /> +91 98765 43210
+              <a href="tel:+919363242437">
+                <FaPhoneAlt /> +91 93632 42437
               </a>
             </li>
             <li>
@@ -53,16 +72,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* FOLLOW US – ICON ONLY */}
-        <div className="footer-menu">
-          <h5>Follow Us</h5>
-          <ul className="follow-us">
-            <li><a href="#"><FaFacebook /></a></li>
-            <li><a href="#"><FaInstagram /></a></li>
-            <li><a href="#"><FaTwitter /></a></li>
-            <li><a href="#"><FaWhatsapp /></a></li>
-          </ul>
-        </div>
+        
 
         {/* FEEDBACK */}
         <ReviewForm />

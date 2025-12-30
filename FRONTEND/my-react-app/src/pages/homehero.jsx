@@ -258,8 +258,7 @@ const Homehero = () => {
       </div>
 
       {/* === Reviews Section === */}
-      <div style={{ padding: "10px", marginTop: "5%" }}>
-          
+      <div style={{ padding: "10px", marginTop: "5%" }}>          
           <h2
             style={{
               textAlign: "center",
