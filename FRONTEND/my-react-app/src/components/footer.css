@@ -1,7 +1,7 @@
 .footer {
   background: linear-gradient(135deg, #440000, #6a0000);
   color: #fff;
-  padding: 40px 20px 15px;
+  padding: 15px;
   margin-top: 50px;
 }
 
@@ -87,7 +87,6 @@
 .follow-us {
   display: flex;
   gap: 15px;
-  margin-top: 32px;
 }
 
 .follow-us li {
@@ -114,23 +113,22 @@
 .review-container h2 {
   text-align: center;
   color: #ffdddd;
-  margin-bottom: 10px;
 }
 
 .name-input,
 #comment-box {
   width: 100%;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 8px;
+  padding: 2px;
+  border-radius: px;
+  border: none; 
 }
 
 #subm-button {
-  background: linear-gradient(135deg, #440000, #7a0000);
-  color: #fff;
+  background: white;
+  color: #440000;
+  font-weight: bold;
   border: none;
-  padding: 6px 22px;
+  padding: 2px 22px;
   border-radius: 20px;
   cursor: pointer;
   display: block;
@@ -138,21 +136,19 @@
 }
 
 /* STARS */
-.stars {
+ .stars {
   text-align: center;
-}
+} 
 
 .star {
   font-size: 22px;
-  color: gold;
   cursor: pointer;
 }
 
 /* COPYRIGHT */
 #year {
   text-align: center;
-  margin-top: 25px;
-  font-size: 0.85rem;
+  font-size: 0.70rem;
   color: #ffdddd;
 }
 
