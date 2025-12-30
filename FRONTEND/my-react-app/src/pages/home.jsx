@@ -148,49 +148,39 @@ const Home = () => {
   </div>
 </section>
 
-
-    
-
       {/* === About Section === */}
       
       <div id="id">
        <section id="aboutt">
         <div id="aboutt">
-         <h4>About Us</h4>
+         <h4><i className="fa-solid fa-users"></i> About Us</h4>
           
           <p>We save lives through the power of blood donation.
           Connecting donors with those in need, every drop counts.
           Together, we build a healthier, caring community.
           Because giving blood means giving life.</p>
       
-          <div id="abouticon">
-            <i className="fa-solid fa-users"></i>
-          </div>
         </div>
         </section>
          <section id="aboutt">
         <div id="vission">
-         <h4>Vission</h4>
+         <h4><i className="fa-solid fa-eye"></i> Vission</h4>
            
           <p>Our vision is to create a world where no life is lost due to lack of blood.
           We strive to inspire voluntary blood donation as a social responsibility.
           By connecting hearts, we build a culture of compassion and care.
           </p>
-          <div id="vissionicon">
-           <i className="fa-solid fa-eye"></i>
-          </div>
+          
         </div>
         </section>
         <section id="aboutt">
         <div id="mission">
-          <h4>Mission</h4>
+          <h4> <i className="fa-solid fa-bullseye"></i> Mission</h4>
              
           <p>Our mission is to promote safe and regular blood donation for all in need.
           We aim to bridge the gap between donors and recipients with trust and care.
           Through awareness and action, we empower communities to save lives.</p>
-          <div id="missionicon">
-           <i className="fa-solid fa-bullseye"></i>
-          </div>
+          
         </div>
         </section>
       </div>
@@ -222,7 +212,7 @@ const Home = () => {
       {/* === Eligibility Section === */}
       <section id="eligibility">
       <div id="eligibility">
-        <h3>Blood Donors Eligibility</h3>
+        <h3>Donors Eligibility</h3>
         <p>You should not be suffering from any of the following diseases or taking medicines for them</p>
         <ul>
           <li>Age: 18-65 years</li>
@@ -245,6 +235,7 @@ const Home = () => {
       </section>
 
       {/* === Image Slider === */}
+      <h3 style={{ color: '#a30000',textAlign:'center',  fontSize: '2em'}}>OUR SERVICE</h3>
       <div className="slider d-flex justify-content-center align-items-center mt-5">
         <div className="slider_row d-flex">
           <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
@@ -260,8 +251,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div style={{ padding: "10px", marginTop: "5%" }}>
-                
+       {/* === Reviews Section === */}
+            <div style={{ padding: "10px", marginTop: "5%" }}>          
                 <h2
                   style={{
                     textAlign: "center",
@@ -277,8 +268,19 @@ const Home = () => {
                 {reviews.length === 0 ? (
                   <p style={{ textAlign: "center", color: "#555" }}>No reviews yet.</p>
                 ) : (
-                  <Carousel responsive={responsive} autoPlay infinite>
-                    {reviews.map((r) => (
+                <Carousel
+                responsive={responsive}
+                autoPlay
+                infinite
+                arrows={false}              
+                showDots={false}           
+                autoPlaySpeed={2000}        
+                pauseOnHover={false}        
+                customTransition="transform 1s ease-in-out"
+                transitionDuration={2000}
+                containerClass="carousel-container"
+                >
+                 {reviews.map((r) => (
                       <div
                         key={r.id}
                         style={{
@@ -300,7 +302,7 @@ const Home = () => {
                           e.currentTarget.style.transform = "translateY(0)";
                         }}
                       >
-                        {/* LEFT: Profile Picture */}
+                        {/*  Profile Picture */}
                         <img
                           src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
                             r.user_name
