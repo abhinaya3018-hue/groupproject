@@ -112,7 +112,8 @@
 
 .review-container h2 {
   text-align: center;
-  color: #ffdddd;
+  color: white;
+  font-size: 23px;
 }
 
 .name-input,
@@ -170,13 +171,17 @@
     text-align: center;
     align-items: center;
   }
-
   .follow-us {
     justify-content: center;
   }
-
   .footer-menu h5::after {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 322px) {
+  .footer-title{
+    font-size: 1.4rem;
   }
 }

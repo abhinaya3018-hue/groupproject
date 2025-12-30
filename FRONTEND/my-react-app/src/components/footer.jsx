@@ -60,8 +60,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:support@bloodconnect.com">
-                <MdEmail /> support@bloodconnect.com
+              <a href="mailto:rredconnect@gmail.com">
+                <MdEmail /> rredconnect@gmail.com
               </a>
             </li>
             <li>
