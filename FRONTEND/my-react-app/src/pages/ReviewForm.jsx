@@ -17,7 +17,7 @@ export default function ReviewForm() {
   rating: rating,
   comment: comment
 });
-      alert("Review submitted successfully!");
+      // alert("Review submitted successfully!");
       setRating(0);
       setComment("");
       setUsername("");
