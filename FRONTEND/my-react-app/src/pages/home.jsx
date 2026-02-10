@@ -5,6 +5,17 @@ import axios from "axios";
 import Carousel from "react-multi-carousel";
 import { FaStar } from "react-icons/fa"; 
 import "react-multi-carousel/lib/styles.css";
+import DonateImg from './assets/OIP.webp.'
+import Blood1 from '../assets/blood1.webp';
+import Blood2 from '../assets/blood2.webp';
+import Blood3 from '../assets/blood3.webp';
+import Blood4 from '../assets/blood4.jpg';
+import Blood5 from '../assets/blood5.webp';
+import Blood6 from '../assets/blood6.jpg';
+import Blood7 from '../assets/blood7.webp';
+import Blood8 from '../assets/blood8.png';
+import Blood9 from '../assets/blood9.webp';
+import Blood10 from '../assets/blood10.jpg';
 
 const Home = () => {
   const [username, setUsername] = useState("");
@@ -189,7 +200,7 @@ const Home = () => {
       {/* === Why Donate Section === */}
       <div id="id1">
         <div>
-          <img src="./src/assets/OIP.webp" alt="donor" />
+          <img src={DonateImg} alt="donor" />
         </div>
         <div>
           <h1>Why Donate Blood ?</h1>
@@ -238,16 +249,16 @@ const Home = () => {
       <h3 style={{ color: '#a30000',textAlign:'center',  fontSize: '2em'}}>OUR SERVICE</h3>
       <div className="slider d-flex justify-content-center align-items-center mt-5">
         <div className="slider_row d-flex">
-          <div className="slider_column"><img src="./src/assets/blood1.webp" alt="1" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood2.webp" alt="2" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood3.webp" alt="3" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood4.jpg" alt="4" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood5.webp" alt="5" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood6.jpg" alt="6" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood7.webp" alt="7" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood8.png" alt="8" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood9.webp" alt="9" className="img-fluid find" /></div>
-          <div className="slider_column"><img src="./src/assets/blood10.jpg" alt="10" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood1} alt="1" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood2} alt="2" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood3} alt="3" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood4} alt="4" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood5} alt="5" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood6} alt="6" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood7} alt="7" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood8} alt="8" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood9} alt="9" className="img-fluid find" /></div>
+          <div className="slider_column"><img src={Blood10} alt="10" className="img-fluid find" /></div>
         </div>
       </div>
 
