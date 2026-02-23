@@ -5,7 +5,7 @@ import axios from "axios";
 import Carousel from "react-multi-carousel";
 import { FaStar } from "react-icons/fa"; 
 import "react-multi-carousel/lib/styles.css";
-import DonateImg from './assets/OIP.webp.'
+import DonateImg from '../assets/OIP.webp';
 import Blood1 from '../assets/blood1.webp';
 import Blood2 from '../assets/blood2.webp';
 import Blood3 from '../assets/blood3.webp';

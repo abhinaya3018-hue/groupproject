@@ -172,7 +172,7 @@ Please respond as soon as possible.
                 "numbers": donor.phone
             },
             timeout=10
-        )
+        )       
         resp.raise_for_status()
     except Exception as e:
         logger.exception("SMS send failed (non-fatal)")
